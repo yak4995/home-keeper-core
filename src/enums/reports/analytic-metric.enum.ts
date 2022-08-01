@@ -1,0 +1,10 @@
+export enum AnalyticMetric {
+  MIN = 0,
+  MAX = 1,
+  COUNT = 2,
+  SUM = 3,
+  AVG = 4,
+  MEDIAN = 5,
+  RATIO = 6,
+  CHANGE = 7,
+}

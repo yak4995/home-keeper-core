@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./lib",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "paths": {
+      "@enums": [
+        "src/enums"
+      ],
+      "@enums/*": [
+        "src/enums/*"
+      ],
+      "@persistance": [
+        "src/persistance"
+      ],
+      "@persistance/*": [
+        "src/persistance/*"
+      ],
+      "@transport": [
+        "src/transport"
+      ],
+      "@transport/*": [
+        "src/transport/*"
+      ],
+      "@services": [
+        "src/services"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@ports": [
+        "src/ports"
+      ],
+      "@ports/*": [
+        "src/ports/*"
+      ]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
