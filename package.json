@@ -1,8 +1,8 @@
 {
   "name": "@yak4995/home-keeper-core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Lib what define all core interfaces for home keeper",
-  "main": "index.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
