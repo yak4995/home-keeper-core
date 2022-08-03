@@ -8,37 +8,37 @@
     "experimentalDecorators": true,
     "removeComments": true,
     "noImplicitAny": false,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
       "@enums": [
-        "src/enums"
+        "enums"
       ],
       "@enums/*": [
-        "src/enums/*"
+        "enums/*"
       ],
       "@persistance": [
-        "src/persistance"
+        "persistance"
       ],
       "@persistance/*": [
-        "src/persistance/*"
+        "persistance/*"
       ],
       "@transport": [
-        "src/transport"
+        "transport"
       ],
       "@transport/*": [
-        "src/transport/*"
+        "transport/*"
       ],
       "@services": [
-        "src/services"
+        "services"
       ],
       "@services/*": [
-        "src/services/*"
+        "services/*"
       ],
       "@ports": [
-        "src/ports"
+        "ports"
       ],
       "@ports/*": [
-        "src/ports/*"
+        "ports/*"
       ]
     }
   },
