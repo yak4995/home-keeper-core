@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, IConsumedResourceItem } from '@persistance';
+import { EntityAbstractFactory, IConsumedResourceItem } from 'persistance';
 
 export abstract class ConsumedResourceItemAbstractFactory extends EntityAbstractFactory<IConsumedResourceItem> {
   public static setInstance(instance: ConsumedResourceItemAbstractFactory): void {

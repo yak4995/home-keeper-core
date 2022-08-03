@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, ITimezone } from '@persistance';
+import { EntityAbstractFactory, ITimezone } from 'persistance';
 
 export abstract class TimezoneAbstractFactory extends EntityAbstractFactory<ITimezone> {
   public static setInstance(instance: TimezoneAbstractFactory): void {

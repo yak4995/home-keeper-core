@@ -1,4 +1,4 @@
-import { IPersistantEntity, IHouseholdInvitation, IUser } from '@persistance';
+import { IPersistantEntity, IHouseholdInvitation, IUser } from 'persistance';
 
 export interface IHousehold extends IPersistantEntity {
   name: string;

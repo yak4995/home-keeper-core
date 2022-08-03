@@ -1,5 +1,5 @@
-import { ID, IStockCategory } from '@persistance';
-import { IStockCategoryDto } from '@ports';
+import { ID, IStockCategory } from 'persistance';
+import { IStockCategoryDto } from 'ports';
 
 export interface StockCategoryInputPort {
   getRootCategories(id: ID): Promise<IStockCategory[]>;

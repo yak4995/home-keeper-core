@@ -1,4 +1,4 @@
-import { IBudget, IBudgetItem, IHousehold } from '@persistance';
+import { IBudget, IBudgetItem, IHousehold } from 'persistance';
 
 export interface BudgetOutputPort {
   getBudgets(output: IBudget[]): Promise<any>;

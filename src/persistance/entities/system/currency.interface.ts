@@ -1,4 +1,4 @@
-import { IPersistantEntity } from '@persistance';
+import { IPersistantEntity } from 'persistance';
 
 export interface ICurrency extends IPersistantEntity {
   name: string;

@@ -1,5 +1,5 @@
-import { IBudget, IBudgetItem, ID, IHousehold } from '@persistance';
-import { IBudgetDto, IBudgetItemDto } from '@ports';
+import { IBudget, IBudgetItem, ID, IHousehold } from 'persistance';
+import { IBudgetDto, IBudgetItemDto } from 'ports';
 
 export interface BudgetInputPort {
   getBudgets(owner: IHousehold, accountIds: ID[], from: Date, to: Date): Promise<IBudget[]>;

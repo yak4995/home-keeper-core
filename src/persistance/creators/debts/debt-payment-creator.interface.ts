@@ -1,3 +1,3 @@
-import { IEntityCreator, IDebtPayment } from '@persistance';
+import { IEntityCreator, IDebtPayment } from 'persistance';
 
 export interface IDebtPaymentCreator extends IEntityCreator<IDebtPayment> {}

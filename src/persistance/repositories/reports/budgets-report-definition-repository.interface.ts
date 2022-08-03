@@ -1,3 +1,3 @@
-import { IRepository, IBudgetsReportDefinition } from '@persistance';
+import { IRepository, IBudgetsReportDefinition } from 'persistance';
 
 export interface IBudgetsReportDefinitionRepository extends IRepository<IBudgetsReportDefinition> {}

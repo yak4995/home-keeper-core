@@ -1,5 +1,5 @@
-import { Period, TaxType } from '@enums';
-import { ID } from '@persistance';
+import { Period, TaxType } from 'enums';
+import { ID } from 'persistance';
 
 export interface ITaxDto {
   name: string;

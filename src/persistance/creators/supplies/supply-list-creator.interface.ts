@@ -1,3 +1,3 @@
-import { IEntityCreator, ISupplyList } from '@persistance';
+import { IEntityCreator, ISupplyList } from 'persistance';
 
 export interface ISupplyListCreator extends IEntityCreator<ISupplyList> {}

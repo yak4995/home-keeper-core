@@ -1,5 +1,5 @@
-import { IPersistantEntity, IHousehold, ICurrency, ITransactionCategory } from '@persistance';
-import { Period } from '@enums';
+import { IPersistantEntity, IHousehold, ICurrency, ITransactionCategory } from 'persistance';
+import { Period } from 'enums';
 
 export interface ISubscription extends IPersistantEntity {
   owner: IHousehold;

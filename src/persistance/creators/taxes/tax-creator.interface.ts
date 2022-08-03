@@ -1,3 +1,3 @@
-import { IEntityCreator, ITax } from '@persistance';
+import { IEntityCreator, ITax } from 'persistance';
 
 export interface ITaxCreator extends IEntityCreator<ITax> {}

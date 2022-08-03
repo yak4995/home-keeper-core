@@ -9,38 +9,6 @@
     "removeComments": true,
     "noImplicitAny": false,
     "baseUrl": "src",
-    "paths": {
-      "@enums": [
-        "enums"
-      ],
-      "@enums/*": [
-        "enums/*"
-      ],
-      "@persistance": [
-        "persistance"
-      ],
-      "@persistance/*": [
-        "persistance/*"
-      ],
-      "@transport": [
-        "transport"
-      ],
-      "@transport/*": [
-        "transport/*"
-      ],
-      "@services": [
-        "services"
-      ],
-      "@services/*": [
-        "services/*"
-      ],
-      "@ports": [
-        "ports"
-      ],
-      "@ports/*": [
-        "ports/*"
-      ]
-    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/*.spec.ts"]

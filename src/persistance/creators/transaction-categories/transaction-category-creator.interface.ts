@@ -1,3 +1,3 @@
-import { IEntityCreator, ITransactionCategory } from '@persistance';
+import { IEntityCreator, ITransactionCategory } from 'persistance';
 
 export interface ITransactionCategoryCreator extends IEntityCreator<ITransactionCategory> {}

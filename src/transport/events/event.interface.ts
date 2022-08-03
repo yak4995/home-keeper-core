@@ -1,4 +1,4 @@
-import { EventStatus } from '@transport';
+import { EventStatus } from '.';
 
 export interface IEvent {
   state: EventStatus;

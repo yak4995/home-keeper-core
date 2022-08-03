@@ -1,4 +1,4 @@
-import { IPersistantEntity, IStockItem } from '@persistance';
+import { IPersistantEntity, IStockItem } from 'persistance';
 
 export interface IStockTransaction extends IPersistantEntity {
   stockItem: IStockItem;

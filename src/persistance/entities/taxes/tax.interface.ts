@@ -1,5 +1,5 @@
-import { IPersistantEntity, IUser, ITransactionCategory, IAccount } from '@persistance';
-import { TaxType, Period } from '@enums';
+import { IPersistantEntity, IUser, ITransactionCategory, IAccount } from 'persistance';
+import { TaxType, Period } from 'enums';
 
 export interface ITax extends IPersistantEntity {
   owner: IUser;

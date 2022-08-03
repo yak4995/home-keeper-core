@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, ITaxesReportDefinition } from '@persistance';
+import { EntityAbstractFactory, ITaxesReportDefinition } from 'persistance';
 
 export abstract class TaxesReportDefinitionAbstractFactory extends EntityAbstractFactory<ITaxesReportDefinition> {
   public static setInstance(instance: TaxesReportDefinitionAbstractFactory): void {

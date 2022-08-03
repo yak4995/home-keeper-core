@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, IAmortizationProject } from '@persistance';
+import { EntityAbstractFactory, IAmortizationProject } from 'persistance';
 
 export abstract class AmortizationProjectAbstractFactory extends EntityAbstractFactory<IAmortizationProject> {
   public static setInstance(instance: AmortizationProjectAbstractFactory): void {

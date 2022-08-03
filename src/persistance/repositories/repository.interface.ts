@@ -1,4 +1,4 @@
-import { IPersistantEntity, OrderCriteria, Criteria, ID } from '@persistance';
+import { IPersistantEntity, OrderCriteria, Criteria, ID } from 'persistance';
 
 // Probably children: TypeOrmRepository<T>, MongoRepository<T>, XmlRepository<T>
 export interface IRepository<T extends IPersistantEntity> {

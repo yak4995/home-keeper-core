@@ -1,4 +1,4 @@
-import { IPersistantEntity, IEntityCreator, Criteria, IRepository } from '@persistance';
+import { IPersistantEntity, IEntityCreator, Criteria, IRepository } from 'persistance';
 
 // For instantiating objects of related classes without their source dependency
 // It links object instaintiating and their repo with the same internal implementation

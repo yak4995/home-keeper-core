@@ -1,5 +1,5 @@
-import { ID, ISubscription } from '@persistance';
-import { ISubscriptionDto } from '@ports';
+import { ID, ISubscription } from 'persistance';
+import { ISubscriptionDto } from 'ports';
 
 export interface SubscriptionInputPort {
   getSubscriptionsList(ownerId: ID): Promise<ISubscription[]>;

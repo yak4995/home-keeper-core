@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, IStockTransaction } from '@persistance';
+import { EntityAbstractFactory, IStockTransaction } from 'persistance';
 
 export abstract class StockTransactionAbstractFactory extends EntityAbstractFactory<IStockTransaction> {
   public static setInstance(instance: StockTransactionAbstractFactory): void {

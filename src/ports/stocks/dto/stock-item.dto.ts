@@ -1,5 +1,5 @@
-import { Period } from '@enums';
-import { ID } from '@persistance';
+import { Period } from 'enums';
+import { ID } from 'persistance';
 
 export interface IStockItemDto {
   name: string;

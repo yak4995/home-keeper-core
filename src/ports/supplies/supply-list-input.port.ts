@@ -1,5 +1,5 @@
-import { ID, ISupplyList, ISupplyListItem } from '@persistance';
-import { ISupplyListItemDto } from '@ports';
+import { ID, ISupplyList, ISupplyListItem } from 'persistance';
+import { ISupplyListItemDto } from 'ports';
 
 export interface SupplyListInputPort {
   getSupplyLists(ownerID: ID): Promise<ISupplyList[]>;

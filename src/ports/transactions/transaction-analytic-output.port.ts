@@ -1,5 +1,5 @@
-import { ITransaction } from '@persistance';
-import { IAnalyticComparisonDto } from '@ports';
+import { ITransaction } from 'persistance';
+import { IAnalyticComparisonDto } from 'ports';
 
 export interface TransactionAnalyticOutputPort {
   getMaxTransaction(output: ITransaction): Promise<any>;

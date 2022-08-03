@@ -1,4 +1,4 @@
-import { IPersistantEntity, IAccount, IHousehold } from '@persistance';
+import { IPersistantEntity, IAccount, IHousehold } from 'persistance';
 
 export interface IBudget extends IPersistantEntity {
   owner: IHousehold;

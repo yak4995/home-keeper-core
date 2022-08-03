@@ -1,5 +1,5 @@
-import { ID, IStockItem } from '@persistance';
-import { IStockItemDto } from '@ports';
+import { ID, IStockItem } from 'persistance';
+import { IStockItemDto } from 'ports';
 
 export interface StockItemInputPort {
   getStockItemsList(ownerId: ID): Promise<IStockItem[]>;

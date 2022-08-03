@@ -1,5 +1,5 @@
-import { IUser, IAccount, ID } from '@persistance';
-import { IAccountDto } from '@ports';
+import { IUser, IAccount, ID } from 'persistance';
+import { IAccountDto } from 'ports';
 
 export interface AccountInputPort {
   createAccount(user: IUser, payload: IAccountDto): Promise<IAccount>;

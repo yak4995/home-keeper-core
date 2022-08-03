@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, ITransactionCategory } from '@persistance';
+import { EntityAbstractFactory, ITransactionCategory } from 'persistance';
 
 export abstract class TransactionCategoryAbstractFactory extends EntityAbstractFactory<ITransactionCategory> {
   public static setInstance(instance: TransactionCategoryAbstractFactory): void {

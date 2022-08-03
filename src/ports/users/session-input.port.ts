@@ -1,5 +1,5 @@
-import { ID } from '@persistance';
-import { IUserCredentialDto } from '@ports';
+import { ID } from 'persistance';
+import { IUserCredentialDto } from 'ports';
 
 export interface SessionInputPort {
   signIn(payload: IUserCredentialDto): Promise<any>;

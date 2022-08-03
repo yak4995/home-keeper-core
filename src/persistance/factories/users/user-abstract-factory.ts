@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, IUser } from '@persistance';
+import { EntityAbstractFactory, IUser } from 'persistance';
 
 export abstract class UserAbstractFactory extends EntityAbstractFactory<IUser> {
   public static setInstance(instance: UserAbstractFactory): void {

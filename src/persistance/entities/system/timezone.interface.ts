@@ -1,4 +1,4 @@
-import { IPersistantEntity } from '@persistance';
+import { IPersistantEntity } from 'persistance';
 
 export interface ITimezone extends IPersistantEntity {
   name: string;

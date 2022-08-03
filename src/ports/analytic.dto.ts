@@ -1,4 +1,4 @@
-import { AnalyticMetric, Period } from '@enums';
+import { AnalyticMetric, Period } from 'enums';
 
 export interface IAnalyticDto {
   from?: Date;

@@ -1,5 +1,5 @@
-import { ID, ITransactionCategory } from '@persistance';
-import { ITransactionCategoryDto } from '@ports';
+import { ID, ITransactionCategory } from 'persistance';
+import { ITransactionCategoryDto } from 'ports';
 
 export interface TransactionCategoryInputPort {
   getTransactionCategoryChildren(ownerId: ID, id: ID): Promise<ITransactionCategory[]>;

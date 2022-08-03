@@ -1,5 +1,5 @@
-import { IPersistantEntity, ICurrency, ILanguage, ITimezone, IHousehold } from '@persistance';
-import { UserRole, UserStatus } from '@enums';
+import { IPersistantEntity, ICurrency, ILanguage, ITimezone, IHousehold } from 'persistance';
+import { UserRole, UserStatus } from 'enums';
 
 export interface IUser extends IPersistantEntity {
   status: UserStatus;

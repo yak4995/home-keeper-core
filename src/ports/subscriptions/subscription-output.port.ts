@@ -1,4 +1,4 @@
-import { ISubscription } from '@persistance';
+import { ISubscription } from 'persistance';
 
 export interface SubscriptionOutputPort {
   getSubscriptionsList(output: ISubscription[]): Promise<any>;

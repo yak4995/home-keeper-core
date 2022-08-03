@@ -1,5 +1,5 @@
-import { ID, IEstimationProject, IEstimationProjectItem, IHousehold } from '@persistance';
-import { IEstimationDto, IEstimationItemDto } from '@ports';
+import { ID, IEstimationProject, IEstimationProjectItem, IHousehold } from 'persistance';
+import { IEstimationDto, IEstimationItemDto } from 'ports';
 
 export interface EstimationInputPort {
   getEstimations(owner: IHousehold, from: Date, to: Date): Promise<IEstimationProject[]>;

@@ -1,4 +1,4 @@
-import { IStockTransaction } from '@persistance';
+import { IStockTransaction } from 'persistance';
 
 export interface StockTransactionOutputPort {
   getStockTransactionsList(output: IStockTransaction[]): Promise<any>;

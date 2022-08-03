@@ -1,4 +1,4 @@
-import { IAnalyticComparisonDto } from '@ports';
+import { IAnalyticComparisonDto } from 'ports';
 
 export interface StockAnalyticOutputPort {
   getStockTransactionsCount(output: number): Promise<any>;

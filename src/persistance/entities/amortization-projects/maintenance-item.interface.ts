@@ -1,6 +1,6 @@
-import { IPersistantEntity, ITransactionCategory, IAmortizationProject } from '@persistance';
+import { IPersistantEntity, ITransactionCategory, IAmortizationProject } from 'persistance';
 
-import { Period } from '@enums';
+import { Period } from 'enums';
 
 export interface IMaintenanceItem extends IPersistantEntity {
   project: IAmortizationProject;

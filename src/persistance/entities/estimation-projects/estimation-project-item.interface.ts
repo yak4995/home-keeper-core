@@ -1,4 +1,4 @@
-import { IPersistantEntity, IEstimationProject, ICurrency, ITransactionCategory, ITransaction } from '@persistance';
+import { IPersistantEntity, IEstimationProject, ICurrency, ITransactionCategory, ITransaction } from 'persistance';
 
 export interface IEstimationProjectItem extends IPersistantEntity {
   dedicatedSum: number;

@@ -1,3 +1,3 @@
-import { IRepository, ISupplyList } from '@persistance';
+import { IRepository, ISupplyList } from 'persistance';
 
 export interface ISupplyListRepository extends IRepository<ISupplyList> {}

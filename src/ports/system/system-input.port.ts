@@ -1,5 +1,5 @@
-import { ICurrency, ID, ILanguage, ITimezone } from '@persistance';
-import { ICurrencyDto, ILangDto, ITzDto } from '@ports';
+import { ICurrency, ID, ILanguage, ITimezone } from 'persistance';
+import { ICurrencyDto, ILangDto, ITzDto } from 'ports';
 
 export interface SystemInputPort {
   getAllCurrencies(): Promise<ICurrency[]>;

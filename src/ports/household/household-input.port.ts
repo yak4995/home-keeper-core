@@ -1,4 +1,4 @@
-import { ID, IHousehold, IHouseholdInvitation } from '@persistance';
+import { ID, IHousehold, IHouseholdInvitation } from 'persistance';
 
 export interface HouseholdInputPort {
   // from household member

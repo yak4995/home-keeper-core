@@ -1,4 +1,4 @@
-import { IStockCategory } from '@persistance';
+import { IStockCategory } from 'persistance';
 
 export interface StockCategoryOutputPort {
   getRootCategories(output: IStockCategory[]): Promise<any>;

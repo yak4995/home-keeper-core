@@ -1,4 +1,4 @@
-import { Command } from '@transport';
+import { Command } from './command';
 
 /*
   Client is an app.

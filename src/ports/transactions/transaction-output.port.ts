@@ -1,4 +1,4 @@
-import { ITransaction } from '@persistance';
+import { ITransaction } from 'persistance';
 
 export interface TransactionOutputPort {
   getTransactionDetail(output: ITransaction): Promise<any>;

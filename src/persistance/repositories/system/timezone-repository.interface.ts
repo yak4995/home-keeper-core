@@ -1,3 +1,3 @@
-import { IRepository, ITimezone } from '@persistance';
+import { IRepository, ITimezone } from 'persistance';
 
 export interface ITimezoneRepository extends IRepository<ITimezone> {}

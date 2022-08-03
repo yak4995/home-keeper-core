@@ -1,5 +1,5 @@
-import { ID, IDebt, IHousehold } from '@persistance';
-import { IDebtDto } from '@ports';
+import { ID, IDebt, IHousehold } from 'persistance';
+import { IDebtDto } from 'ports';
 
 export interface DebtInputPort {
   getDebtsList(owner: IHousehold): Promise<IDebt[]>;

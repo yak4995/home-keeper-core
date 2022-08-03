@@ -1,4 +1,4 @@
-import { Period } from '@enums';
+import { Period } from 'enums';
 
 export interface IMaintenanceItemDto {
   categoryName: string;

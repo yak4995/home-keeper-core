@@ -1,4 +1,4 @@
-import { IEvent, IEventListener } from '@transport';
+import { IEvent, IEventListener } from '.';
 
 export abstract class EventDispatcher<T extends IEvent> {
   constructor(protected eventListeners: IEventListener<T>[]) {}

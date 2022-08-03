@@ -1,4 +1,4 @@
-import { IAnalyticComparisonDto, ITransactionAnalyticDto } from '@ports';
+import { IAnalyticComparisonDto, ITransactionAnalyticDto } from 'ports';
 
 export interface TransactionAnalyticInputPort {
   getMaxTransaction(payload: ITransactionAnalyticDto): Promise<number>;
