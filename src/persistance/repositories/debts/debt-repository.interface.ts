@@ -1,3 +1,3 @@
-import { IRepository, IDebt } from 'persistance';
+import { IRepository, IDebt } from '../..';
 
 export interface IDebtRepository extends IRepository<IDebt> {}

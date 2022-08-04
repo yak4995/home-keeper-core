@@ -1,4 +1,4 @@
-import { IAmortizationProject, IBudget, IConsumedResourceItem, IMaintenanceItem } from 'persistance';
+import { IAmortizationProject, IBudget, IConsumedResourceItem, IMaintenanceItem } from '../../persistance';
 
 export interface AmortizationOutputPort {
   getAmortizations(output: IAmortizationProject): Promise<any>;

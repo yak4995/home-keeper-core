@@ -1,5 +1,5 @@
-import { ID, ITax } from 'persistance';
-import { ITaxDto } from 'ports';
+import { ID, ITax } from '../../persistance';
+import { ITaxDto } from '../../ports';
 
 export interface TaxInputPort {
   getTaxesList(ownerId: ID): Promise<ITax[]>;

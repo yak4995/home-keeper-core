@@ -1,4 +1,4 @@
-import { IPersistantEntity, IAccount, ICurrency, ITransactionCategory } from 'persistance';
+import { IPersistantEntity, IAccount, ICurrency, ITransactionCategory } from '../..';
 
 export interface ITransaction extends IPersistantEntity {
   date: Date;

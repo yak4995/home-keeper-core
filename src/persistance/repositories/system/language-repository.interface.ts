@@ -1,3 +1,3 @@
-import { IRepository, ILanguage } from 'persistance';
+import { IRepository, ILanguage } from '../..';
 
 export interface ILanguageRepository extends IRepository<ILanguage> {}

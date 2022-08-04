@@ -1,3 +1,3 @@
-import { IEntityCreator, IEstimationProject } from 'persistance';
+import { IEntityCreator, IEstimationProject } from '../..';
 
 export interface IEstimationProjectCreator extends IEntityCreator<IEstimationProject> {}

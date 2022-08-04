@@ -1,4 +1,4 @@
-import { IDebt } from 'persistance';
+import { IDebt } from '../../persistance';
 
 export interface DebtOutputPort {
   getDebtsList(output: IDebt[]): Promise<any>;

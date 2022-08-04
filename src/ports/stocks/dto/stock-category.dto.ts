@@ -1,4 +1,4 @@
-import { ID } from 'persistance';
+import { ID } from '../../../persistance';
 
 export interface IStockCategoryDto {
   name: string;

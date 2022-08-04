@@ -1,4 +1,4 @@
-import { ID } from 'persistance';
+import { ID } from '../..';
 
 export interface IPersistantEntity {
   id: ID;

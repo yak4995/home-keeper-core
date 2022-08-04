@@ -1,5 +1,5 @@
-import { AnalyticMetric, BudgetAnalyticType, Period } from 'enums';
-import { ID } from 'persistance';
+import { BudgetAnalyticType } from '../../../enums';
+import { ID } from '../../../persistance';
 
 export interface IBudgetAnalyticDto {
   type: BudgetAnalyticType;

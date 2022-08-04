@@ -1,3 +1,3 @@
-import { IEntityCreator, ITransactionsReportDefinition } from 'persistance';
+import { IEntityCreator, ITransactionsReportDefinition } from '../..';
 
 export interface ITransactionsReportDefinitionCreator extends IEntityCreator<ITransactionsReportDefinition> {}

@@ -1,6 +1,6 @@
-import { AnalyticMetric } from 'enums';
-import { ID } from 'persistance';
-import { IReportDefinitionDto } from 'ports';
+import { AnalyticMetric } from '../../../enums';
+import { ID } from '../../../persistance';
+import { IReportDefinitionDto } from '../../../ports';
 
 export interface ITransactionsReportDefinitionDto extends IReportDefinitionDto {
   accountId?: ID;

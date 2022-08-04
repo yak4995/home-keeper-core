@@ -1,3 +1,3 @@
-import { IEntityCreator, IBudgetItem } from 'persistance';
+import { IEntityCreator, IBudgetItem } from '../..';
 
 export interface IBudgetItemCreator extends IEntityCreator<IBudgetItem> {}

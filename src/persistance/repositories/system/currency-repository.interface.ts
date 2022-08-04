@@ -1,3 +1,3 @@
-import { IRepository, ICurrency } from 'persistance';
+import { IRepository, ICurrency } from '../..';
 
 export interface ICurrencyRepository extends IRepository<ICurrency> {}

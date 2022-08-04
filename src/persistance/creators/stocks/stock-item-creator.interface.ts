@@ -1,3 +1,3 @@
-import { IEntityCreator, IStockItem } from 'persistance';
+import { IEntityCreator, IStockItem } from '../..';
 
 export interface IStockItemCreator extends IEntityCreator<IStockItem> {}

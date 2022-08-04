@@ -1,4 +1,4 @@
-import { ISupplyList, ISupplyListItem } from 'persistance';
+import { ISupplyList, ISupplyListItem } from '../../persistance';
 
 export interface SupplyListOutputPort {
   getSupplyLists(output: ISupplyList[]): Promise<any>;

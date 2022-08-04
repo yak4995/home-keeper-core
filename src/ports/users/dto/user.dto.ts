@@ -1,5 +1,5 @@
-import { UserStatus } from 'enums';
-import { ID } from 'persistance';
+import { UserStatus } from '../../../enums';
+import { ID } from '../../../persistance';
 
 export interface IUserDto {
   name?: string;

@@ -1,3 +1,3 @@
-import { IEntityCreator, ITimezone } from 'persistance';
+import { IEntityCreator, ITimezone } from '../..';
 
 export interface ITimezoneCreator extends IEntityCreator<ITimezone> {}

@@ -1,5 +1,5 @@
-import { ID, IReportDefinition } from 'persistance';
-import { IReportDefinitionDto } from 'ports';
+import { ID, IReportDefinition } from '../../persistance';
+import { IReportDefinitionDto } from '../../ports';
 
 export interface ReportInputPort {
   subscribe(userId: ID, payload: IReportDefinitionDto): Promise<IReportDefinition[]>;

@@ -1,4 +1,4 @@
-import { IReportDefinition } from 'persistance';
+import { IReportDefinition } from '../../persistance';
 
 export interface ReportOutputPort {
   subscribe(output: IReportDefinition[]): Promise<any>;

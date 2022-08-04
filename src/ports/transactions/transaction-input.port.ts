@@ -1,5 +1,5 @@
-import { ID, ITransaction, OrderCriteria } from 'persistance';
-import { ITransactionDto, ITransactionFilterDto } from 'ports';
+import { ID, ITransaction, OrderCriteria } from '../../persistance';
+import { ITransactionDto, ITransactionFilterDto } from '../../ports';
 
 export interface TransactionInputPort {
   getTransactionDetail(id: ID): Promise<ITransaction>;

@@ -1,3 +1,3 @@
-import { IRepository, IStockReportDefinition } from 'persistance';
+import { IRepository, IStockReportDefinition } from '../..';
 
 export interface IStockReportDefinitionRepository extends IRepository<IStockReportDefinition> {}

@@ -1,4 +1,4 @@
-import { IAnalyticComparisonDto } from 'ports';
+import { IAnalyticComparisonDto } from '../../ports';
 
 export interface BudgetAnalyticOutputPort {
   getMaxDifference(output: number): Promise<number>;

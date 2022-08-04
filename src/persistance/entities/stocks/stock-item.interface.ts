@@ -1,5 +1,5 @@
-import { IPersistantEntity, IStockCategory } from 'persistance';
-import { Period } from 'enums';
+import { IPersistantEntity, IStockCategory } from '../..';
+import { Period } from '../../../enums';
 
 export interface IStockItem extends IPersistantEntity {
   name: string;

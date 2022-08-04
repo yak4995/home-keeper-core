@@ -1,4 +1,4 @@
-import { IUser } from 'persistance';
+import { IUser } from '../../persistance';
 
 export interface UserOutputPort {
   signUp(output: IUser): Promise<any>;

@@ -1,4 +1,4 @@
-import { IPersistantEntity, ITransactionCategory, IAmortizationProject } from 'persistance';
+import { IPersistantEntity, ITransactionCategory, IAmortizationProject } from '../..';
 
 export interface IConsumedResourceItem extends IPersistantEntity {
   project: IAmortizationProject;

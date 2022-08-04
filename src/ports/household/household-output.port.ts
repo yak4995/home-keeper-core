@@ -1,4 +1,4 @@
-import { IHousehold, IHouseholdInvitation } from 'persistance';
+import { IHousehold, IHouseholdInvitation } from '../../persistance';
 
 export interface HouseholdOutputPort {
   invite(output: boolean): Promise<any>;

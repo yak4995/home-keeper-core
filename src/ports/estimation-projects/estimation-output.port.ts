@@ -1,4 +1,4 @@
-import { IEstimationProject, IEstimationProjectItem } from 'persistance';
+import { IEstimationProject, IEstimationProjectItem } from '../../persistance';
 
 export interface EstimationOutputPort {
   getEstimations(output: IEstimationProject[]): Promise<any>;

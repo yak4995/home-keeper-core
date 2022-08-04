@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, IStockCategory } from 'persistance';
+import { EntityAbstractFactory, IStockCategory } from '../..';
 
 export abstract class StockCategoryAbstractFactory extends EntityAbstractFactory<IStockCategory> {
   public static setInstance(instance: StockCategoryAbstractFactory): void {

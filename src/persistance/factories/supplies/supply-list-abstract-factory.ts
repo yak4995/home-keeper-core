@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, ISupplyList } from 'persistance';
+import { EntityAbstractFactory, ISupplyList } from '../..';
 
 export abstract class SupplyListAbstractFactory extends EntityAbstractFactory<ISupplyList> {
   public static setInstance(instance: SupplyListAbstractFactory): void {

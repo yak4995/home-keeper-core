@@ -1,4 +1,4 @@
-import { ICurrency, ILanguage, ITimezone } from 'persistance';
+import { ICurrency, ILanguage, ITimezone } from '../../persistance';
 
 export interface SystemOutputPort {
   getAllCurrencies(output: ICurrency[]): Promise<any>;

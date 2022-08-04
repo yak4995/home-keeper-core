@@ -1,3 +1,3 @@
-import { IRepository, IAmortizationProject } from 'persistance';
+import { IRepository, IAmortizationProject } from '../..';
 
 export interface IAmortizationProjectRepository extends IRepository<IAmortizationProject> {}

@@ -1,5 +1,5 @@
-import { ID, IStockTransaction } from 'persistance';
-import { IStockTransactionDto, IStockTransactionListDto } from 'ports';
+import { ID, IStockTransaction } from '../../persistance';
+import { IStockTransactionDto, IStockTransactionListDto } from '../../ports';
 
 export interface StockTransactionInputPort {
   getStockTransactionsList(ownerId: ID, payload: IStockTransactionListDto): Promise<IStockTransaction[]>;

@@ -1,4 +1,4 @@
-import { ITax } from 'persistance';
+import { ITax } from '../../persistance';
 
 export interface TaxOutputPort {
   getTaxesList(output: ITax[]): Promise<any>;

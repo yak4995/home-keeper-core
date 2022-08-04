@@ -1,4 +1,4 @@
-import { ITransactionCategory } from 'persistance';
+import { ITransactionCategory } from '../../persistance';
 
 export interface TransactionCategoryOutputPort {
   getTransactionCategoryChildren(output: ITransactionCategory[]): Promise<any>;

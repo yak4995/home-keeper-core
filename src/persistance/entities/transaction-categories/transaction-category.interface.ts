@@ -1,4 +1,4 @@
-import { IPersistantEntity, IHousehold } from 'persistance';
+import { IPersistantEntity, IHousehold } from '../..';
 
 export interface ITransactionCategory extends IPersistantEntity {
   name: string;

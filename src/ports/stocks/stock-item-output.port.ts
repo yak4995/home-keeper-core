@@ -1,4 +1,4 @@
-import { IStockItem } from 'persistance';
+import { IStockItem } from '../../persistance';
 
 export interface StockItemOutputPort {
   getStockItemsList(output: IStockItem[]): Promise<any>;

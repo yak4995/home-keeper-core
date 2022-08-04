@@ -1,5 +1,5 @@
-import { ID } from 'persistance';
-import { IDebtPaymentDto } from 'ports';
+import { ID } from '../../../persistance';
+import { IDebtPaymentDto } from '../../../ports';
 
 export interface IDebtDto {
   categoryName: string;

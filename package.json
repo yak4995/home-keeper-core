@@ -1,6 +1,6 @@
 {
   "name": "@yak4995/home-keeper-core",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Lib what define all core interfaces for home keeper",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

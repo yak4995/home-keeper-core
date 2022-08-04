@@ -1,4 +1,4 @@
-import { IPersistantEntity, ISupplyList, IStockItem } from 'persistance';
+import { IPersistantEntity, ISupplyList, IStockItem } from '../..';
 
 export interface ISupplyListItem extends IPersistantEntity {
   isClosed: boolean;

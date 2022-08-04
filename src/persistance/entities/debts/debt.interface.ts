@@ -1,4 +1,4 @@
-import { IPersistantEntity, IHousehold, ICurrency, ITransactionCategory } from 'persistance';
+import { IPersistantEntity, IHousehold, ICurrency, ITransactionCategory } from '../..';
 
 export interface IDebt extends IPersistantEntity {
   owner: IHousehold;

@@ -1,4 +1,4 @@
-import { ID, IPersistantEntity, IRepository } from 'persistance';
+import { ID, IPersistantEntity, IRepository } from '../persistance';
 
 export abstract class IHierarchyService<T extends IPersistantEntity & { parent?: T }> {
   constructor(protected readonly repository: IRepository<T>) {}

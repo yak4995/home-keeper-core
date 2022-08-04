@@ -1,4 +1,4 @@
-import { IPersistantEntity, IDebt } from 'persistance';
+import { IPersistantEntity, IDebt } from '../..';
 
 export interface IDebtPayment extends IPersistantEntity {
   date: Date;

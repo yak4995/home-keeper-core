@@ -1,4 +1,4 @@
-import { IPersistantEntity, IBudget, ICurrency, ITransactionCategory, ITransaction } from 'persistance';
+import { IPersistantEntity, IBudget, ICurrency, ITransactionCategory, ITransaction } from '../..';
 
 export interface IBudgetItem extends IPersistantEntity {
   dedicatedSum: number;

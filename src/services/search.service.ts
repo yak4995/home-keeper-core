@@ -1,4 +1,4 @@
-import { IPersistantEntity } from 'persistance';
+import { IPersistantEntity } from '../persistance';
 
 export interface SearchService<T extends IPersistantEntity> {
   insert(entity: T): Promise<boolean>;

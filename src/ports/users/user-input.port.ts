@@ -1,5 +1,5 @@
-import { ID, IUser } from 'persistance';
-import { IUserCredentialDto, IUserDto } from 'ports';
+import { ID, IUser } from '../../persistance';
+import { IUserCredentialDto, IUserDto } from '../../ports';
 
 export interface UserInputPort {
   signUp(payload: IUserCredentialDto): Promise<IUser>;

@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, IHousehold } from 'persistance';
+import { EntityAbstractFactory, IHousehold } from '../..';
 
 export abstract class HouseholdAbstractFactory extends EntityAbstractFactory<IHousehold> {
   public static setInstance(instance: HouseholdAbstractFactory): void {

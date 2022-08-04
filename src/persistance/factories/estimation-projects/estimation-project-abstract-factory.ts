@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, IEstimationProject } from 'persistance';
+import { EntityAbstractFactory, IEstimationProject } from '../..';
 
 export abstract class EstimationProjectAbstractFactory extends EntityAbstractFactory<IEstimationProject> {
   public static setInstance(instance: EstimationProjectAbstractFactory): void {

@@ -1,3 +1,3 @@
-import { IRepository, IHousehold } from 'persistance';
+import { IRepository, IHousehold } from '../..';
 
 export interface IHouseholdRepository extends IRepository<IHousehold> {}

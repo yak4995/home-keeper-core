@@ -1,4 +1,4 @@
-import { EntityAbstractFactory, IBudget } from 'persistance';
+import { EntityAbstractFactory, IBudget } from '../..';
 
 export abstract class BudgetAbstractFactory extends EntityAbstractFactory<IBudget> {
   public static setInstance(instance: BudgetAbstractFactory): void {

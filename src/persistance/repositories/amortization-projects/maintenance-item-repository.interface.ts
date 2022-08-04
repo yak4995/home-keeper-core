@@ -1,3 +1,3 @@
-import { IRepository, IMaintenanceItem } from 'persistance';
+import { IRepository, IMaintenanceItem } from '../..';
 
 export interface IMaintenanceItemRepository extends IRepository<IMaintenanceItem> {}

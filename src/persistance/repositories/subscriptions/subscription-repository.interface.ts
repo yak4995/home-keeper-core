@@ -1,3 +1,3 @@
-import { IRepository, ISubscription } from 'persistance';
+import { IRepository, ISubscription } from '../..';
 
 export interface ISubscriptionRepository extends IRepository<ISubscription> {}

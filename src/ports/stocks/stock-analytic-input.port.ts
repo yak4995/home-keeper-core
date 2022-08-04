@@ -1,4 +1,4 @@
-import { IAnalyticComparisonDto, IStockAnalyticDto } from 'ports';
+import { IAnalyticComparisonDto, IStockAnalyticDto } from '../../ports';
 
 export interface StockAnalyticInputPort {
   getStockTransactionsCount(payload: IStockAnalyticDto): Promise<number>;

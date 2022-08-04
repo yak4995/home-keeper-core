@@ -1,3 +1,3 @@
-import { IEntityCreator, IConsumedResourceItem } from 'persistance';
+import { IEntityCreator, IConsumedResourceItem } from '../..';
 
 export interface IConsumedResourceItemCreator extends IEntityCreator<IConsumedResourceItem> {}

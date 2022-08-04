@@ -1,5 +1,12 @@
-import { IHousehold, IAmortizationProject, ID, IBudget, IConsumedResourceItem, IMaintenanceItem } from 'persistance';
-import { IAmortizationDto, IMaintenanceItemDto, IConsumedResourceItemDto } from 'ports';
+import {
+  IHousehold,
+  IAmortizationProject,
+  ID,
+  IBudget,
+  IConsumedResourceItem,
+  IMaintenanceItem,
+} from '../../persistance';
+import { IAmortizationDto, IMaintenanceItemDto, IConsumedResourceItemDto } from '../../ports';
 
 export interface AmortizationInputPort {
   getAmortizations(owner: IHousehold): Promise<IAmortizationProject[]>;

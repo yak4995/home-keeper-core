@@ -1,4 +1,4 @@
-import { IAccount } from 'persistance';
+import { IAccount } from '../../persistance';
 
 export interface AccountOutputPort {
   createAccount(output: IAccount): Promise<any>;
