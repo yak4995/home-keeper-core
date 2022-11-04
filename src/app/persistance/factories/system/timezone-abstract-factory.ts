@@ -1,11 +1,19 @@
-import { EntityAbstractFactory, ITimezone } from '../../../..';
+import { Criteria, IEntityCreator, IRepository, ITimezone } from '../../../..';
 
-export abstract class TimezoneAbstractFactory extends EntityAbstractFactory<ITimezone> {
+export abstract class TimezoneAbstractFactory {
+  protected constructor(private entityCreator: IEntityCreator<ITimezone>) {}
+
+  protected static instance: TimezoneAbstractFactory = null;
+
+  abstract createEntityRepo(): IRepository<ITimezone>;
+
+  public createEntityInstance(fields: Criteria<ITimezone>): Promise<ITimezone> {
+    return Promise.resolve(this.entityCreator.getInstance(fields));
+  }
+
   public static setInstance(instance: TimezoneAbstractFactory): void {
     this.instance = instance;
   }
-
-  protected static instance: TimezoneAbstractFactory = null;
 
   public static getInstance(): TimezoneAbstractFactory {
     return this.instance;

@@ -1,11 +1,19 @@
-import { EntityAbstractFactory, IEstimationProject } from '../../../..';
+import { Criteria, IEntityCreator, IEstimationProject, IRepository } from '../../../..';
 
-export abstract class EstimationProjectAbstractFactory extends EntityAbstractFactory<IEstimationProject> {
+export abstract class EstimationProjectAbstractFactory {
+  protected constructor(private entityCreator: IEntityCreator<IEstimationProject>) {}
+
+  protected static instance: EstimationProjectAbstractFactory = null;
+
+  abstract createEntityRepo(): IRepository<IEstimationProject>;
+
+  public createEntityInstance(fields: Criteria<IEstimationProject>): Promise<IEstimationProject> {
+    return Promise.resolve(this.entityCreator.getInstance(fields));
+  }
+
   public static setInstance(instance: EstimationProjectAbstractFactory): void {
     this.instance = instance;
   }
-
-  protected static instance: EstimationProjectAbstractFactory = null;
 
   public static getInstance(): EstimationProjectAbstractFactory {
     return this.instance;

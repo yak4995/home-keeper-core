@@ -1,11 +1,4 @@
-import {
-  IHousehold,
-  IAmortizationProject,
-  ID,
-  IBudget,
-  IConsumedResourceItem,
-  IMaintenanceItem,
-} from '../..';
+import { IHousehold, IAmortizationProject, ID, IBudget, IConsumedResourceItem, IMaintenanceItem } from '../..';
 import { IAmortizationDto, IMaintenanceItemDto, IConsumedResourceItemDto } from '..';
 
 export interface AmortizationInputPort {

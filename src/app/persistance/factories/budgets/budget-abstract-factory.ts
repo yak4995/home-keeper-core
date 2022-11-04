@@ -1,11 +1,19 @@
-import { EntityAbstractFactory, IBudget } from '../../../..';
+import { Criteria, IBudget, IEntityCreator, IRepository } from '../../../..';
 
-export abstract class BudgetAbstractFactory extends EntityAbstractFactory<IBudget> {
+export abstract class BudgetAbstractFactory {
+  protected constructor(private entityCreator: IEntityCreator<IBudget>) {}
+
+  protected static instance: BudgetAbstractFactory = null;
+
+  abstract createEntityRepo(): IRepository<IBudget>;
+
+  public createEntityInstance(fields: Criteria<IBudget>): Promise<IBudget> {
+    return Promise.resolve(this.entityCreator.getInstance(fields));
+  }
+
   public static setInstance(instance: BudgetAbstractFactory): void {
     this.instance = instance;
   }
-
-  protected static instance: BudgetAbstractFactory = null;
 
   public static getInstance(): BudgetAbstractFactory {
     return this.instance;

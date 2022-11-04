@@ -1,11 +1,19 @@
-import { EntityAbstractFactory, ITransaction } from '../../../..';
+import { Criteria, IEntityCreator, IRepository, ITransaction } from '../../../..';
 
-export abstract class TransactionAbstractFactory extends EntityAbstractFactory<ITransaction> {
+export abstract class TransactionAbstractFactory {
+  protected constructor(private entityCreator: IEntityCreator<ITransaction>) {}
+
+  protected static instance: TransactionAbstractFactory = null;
+
+  abstract createEntityRepo(): IRepository<ITransaction>;
+
+  public createEntityInstance(fields: Criteria<ITransaction>): Promise<ITransaction> {
+    return Promise.resolve(this.entityCreator.getInstance(fields));
+  }
+
   public static setInstance(instance: TransactionAbstractFactory): void {
     this.instance = instance;
   }
-
-  protected static instance: TransactionAbstractFactory = null;
 
   public static getInstance(): TransactionAbstractFactory {
     return this.instance;

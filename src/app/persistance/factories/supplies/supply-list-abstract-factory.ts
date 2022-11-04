@@ -1,11 +1,19 @@
-import { EntityAbstractFactory, ISupplyList } from '../../../..';
+import { Criteria, IEntityCreator, IRepository, ISupplyList } from '../../../..';
 
-export abstract class SupplyListAbstractFactory extends EntityAbstractFactory<ISupplyList> {
+export abstract class SupplyListAbstractFactory {
+  protected constructor(private entityCreator: IEntityCreator<ISupplyList>) {}
+
+  protected static instance: SupplyListAbstractFactory = null;
+
+  abstract createEntityRepo(): IRepository<ISupplyList>;
+
+  public createEntityInstance(fields: Criteria<ISupplyList>): Promise<ISupplyList> {
+    return Promise.resolve(this.entityCreator.getInstance(fields));
+  }
+
   public static setInstance(instance: SupplyListAbstractFactory): void {
     this.instance = instance;
   }
-
-  protected static instance: SupplyListAbstractFactory = null;
 
   public static getInstance(): SupplyListAbstractFactory {
     return this.instance;

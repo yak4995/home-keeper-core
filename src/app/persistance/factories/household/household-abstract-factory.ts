@@ -1,11 +1,19 @@
-import { EntityAbstractFactory, IHousehold } from '../../../..';
+import { Criteria, IEntityCreator, IHousehold, IRepository } from '../../../..';
 
-export abstract class HouseholdAbstractFactory extends EntityAbstractFactory<IHousehold> {
+export abstract class HouseholdAbstractFactory {
+  protected constructor(private entityCreator: IEntityCreator<IHousehold>) {}
+
+  protected static instance: HouseholdAbstractFactory = null;
+
+  abstract createEntityRepo(): IRepository<IHousehold>;
+
+  public createEntityInstance(fields: Criteria<IHousehold>): Promise<IHousehold> {
+    return Promise.resolve(this.entityCreator.getInstance(fields));
+  }
+
   public static setInstance(instance: HouseholdAbstractFactory): void {
     this.instance = instance;
   }
-
-  protected static instance: HouseholdAbstractFactory = null;
 
   public static getInstance(): HouseholdAbstractFactory {
     return this.instance;
