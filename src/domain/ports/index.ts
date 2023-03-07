@@ -65,6 +65,8 @@ export * from './supplies/supply-list-output.port';
 export * from './system/dto/currency.dto';
 export * from './system/dto/lang.dto';
 export * from './system/dto/tz.dto';
+export * from './system/system-input.port';
+export * from './system/system-output.port';
 
 export * from './taxes/dto/tax.dto';
 export * from './taxes/tax-input.port';
