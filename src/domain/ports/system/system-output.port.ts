@@ -5,7 +5,7 @@ export interface SystemOutputPort {
   getCurrencyById(output: ICurrency): Promise<any>;
   createCurrency(output: ICurrency): Promise<any>;
   updateCurrency(output: ICurrency): Promise<any>;
-  getAllLanguages(output: ILanguage): Promise<any>;
+  getAllLanguages(output: ILanguage[]): Promise<any>;
   getLangById(output: ILanguage): Promise<any>;
   createLanguage(output: ILanguage): Promise<any>;
   updateLanguage(output: ILanguage): Promise<any>;
