@@ -1,5 +1,5 @@
 export enum UserStatus {
-  NOT_ACTIVE = 0,
-  USER = 1,
-  ADMINISTRATOR = 2,
+  NOT_ACTIVE = 'NOT_ACTIVE',
+  USER = 'USER',
+  ADMINISTRATOR = 'ADMINISTRATOR',
 }
