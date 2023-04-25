@@ -84,9 +84,7 @@ export * from './transactions/transaction-analytic-output.port';
 export * from './transactions/transaction-input.port';
 export * from './transactions/transaction-output.port';
 
-export * from './users/dto/user-credential.dto';
+export * from './users/dto/user-profile.dto';
 export * from './users/dto/user.dto';
-export * from './users/session-input.port';
-export * from './users/session-output.port';
 export * from './users/user-input.port';
 export * from './users/user-output.port';

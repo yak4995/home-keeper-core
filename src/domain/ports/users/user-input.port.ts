@@ -1,14 +1,13 @@
 import { ID, IUser } from '../..';
-import { IUserCredentialDto, IUserDto } from '..';
+import { IUserDto, IUserProfileDto } from '..';
 
 export interface UserInputPort {
-  signUp(payload: IUserCredentialDto): Promise<IUser>;
-
-  getAccountInfo(id: ID): Promise<IUser>;
-  changeAccountInfo(id: ID, payload: IUserDto): Promise<IUser>; // particulary for admins too
-  deleteAccount(id: ID): Promise<IUser>;
-
-  // for admins
-  getAllUsers(): Promise<IUser[]>;
+  // mixed
   getUserById(id: ID): Promise<IUser>;
+  // ony for user itself
+  changeProfileInfo(id: ID, payload: IUserProfileDto): Promise<IUser>;
+  deleteAccount(id: ID): Promise<IUser>;
+  // only for administrators
+  updateUser(id: ID, payload: IUserDto): Promise<IUser>;
+  getAllUsers(): Promise<IUser[]>;
 }
