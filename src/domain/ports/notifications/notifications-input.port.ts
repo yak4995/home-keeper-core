@@ -1,3 +1,3 @@
-export interface INotificationService {
+export interface NotificationsInputPort {
   sendMessage(method: any, sender: any, reciever: any, message: any): Promise<boolean>;
 }

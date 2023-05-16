@@ -32,6 +32,9 @@ export * from './estimation-projects/estimation-output.port';
 export * from './household/household-input.port';
 export * from './household/household-output.port';
 
+export * from './notifications/notifications-input.port';
+export * from './notifications/notifications-output.port';
+
 export * from './reports/dto/report-definition.dto';
 export * from './reports/dto/transactions-report-definition.dto';
 export * from './reports/dto/budget-report-definition.dto';
