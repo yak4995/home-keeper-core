@@ -1,6 +1,8 @@
 import { IUser } from '../..';
 
 export interface UserOutputPort {
+  // for internal usage
+  addUser(output: IUser): Promise<any>;
   // mixed
   getUserById(output: IUser): Promise<any>;
   // ony for user itself

@@ -2,6 +2,8 @@ import { ID, IUser } from '../..';
 import { IUserDto, IUserProfileDto } from '..';
 
 export interface UserInputPort {
+  // for internal usage
+  addUser(authenticationData: any): Promise<IUser>;
   // mixed
   getUserById(id: ID): Promise<IUser>;
   // ony for user itself
