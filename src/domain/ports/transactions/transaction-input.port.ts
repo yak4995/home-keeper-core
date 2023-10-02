@@ -2,7 +2,7 @@ import { ID, ITransaction, OrderCriteria } from '../..';
 import { ITransactionDto, ITransactionFilterDto } from '..';
 
 export interface TransactionInputPort {
-  getTransactionDetail(id: ID): Promise<ITransaction>;
+  getTransactionDetails(id: ID): Promise<ITransaction>;
   getTransactions(
     page: number,
     perPage: number,

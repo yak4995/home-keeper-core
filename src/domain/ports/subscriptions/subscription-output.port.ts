@@ -1,9 +1,24 @@
-import { ISubscription } from '../..';
+import { SubscriptionInputPort } from '../..';
 
 export interface SubscriptionOutputPort {
-  getSubscriptionsList(output: ISubscription[]): Promise<any>;
-  getSubscriptionDetails(output: ISubscription): Promise<any>;
-  addSubscription(output: ISubscription): Promise<any>;
-  editSubscription(output: ISubscription): Promise<any>;
-  deleteSubscription(output: ISubscription): Promise<any>;
+  getSubscriptionsList<R>(
+    output: Awaited<ReturnType<SubscriptionInputPort['getSubscriptionsList']>>,
+    exception: unknown,
+  ): Promise<R>;
+  getSubscriptionDetails<R>(
+    output: Awaited<ReturnType<SubscriptionInputPort['getSubscriptionDetails']>>,
+    exception: unknown,
+  ): Promise<R>;
+  addSubscription<R>(
+    output: Awaited<ReturnType<SubscriptionInputPort['addSubscription']>>,
+    exception: unknown,
+  ): Promise<R>;
+  editSubscription<R>(
+    output: Awaited<ReturnType<SubscriptionInputPort['editSubscription']>>,
+    exception: unknown,
+  ): Promise<R>;
+  deleteSubscription<R>(
+    output: Awaited<ReturnType<SubscriptionInputPort['deleteSubscription']>>,
+    exception: unknown,
+  ): Promise<R>;
 }

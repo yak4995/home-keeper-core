@@ -3,7 +3,7 @@ import { IUserDto, IUserProfileDto } from '..';
 
 export interface UserInputPort {
   // for internal usage
-  addUser(authenticationData: any): Promise<IUser>;
+  addUser(authenticationData: Partial<IUser>): Promise<IUser>;
   // mixed
   getUserById(id: ID): Promise<IUser>;
   // ony for user itself

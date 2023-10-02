@@ -20,7 +20,7 @@ import { Command } from './command';
   Saga-pattern is: each command begin sequence of events, which make execute listeners local transactions in their DBs, and when some transaction was failed,
   listener should start sequence of revert events for make distributed transaction rollback.
 */
-export interface ICommandHandler<T extends Command> {
-  execute(command: T): Promise<any>;
-  rollback(command: T): Promise<any>;
+export interface ICommandHandler<T, C extends Command<T>> {
+  execute(command: C): Promise<T>;
+  rollback(command: C): Promise<T>;
 }

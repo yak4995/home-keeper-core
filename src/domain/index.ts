@@ -1,4 +1,5 @@
 export * from './criteria.type';
+export * from './custom-record.type';
 
 export * from './entities';
 export * from './enums';

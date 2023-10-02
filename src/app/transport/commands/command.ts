@@ -1,5 +1,5 @@
-export abstract class Command {
-  constructor(protected readonly initialState: any, protected readonly desiredState: any) {}
+export abstract class Command<T> {
+  constructor(protected readonly initialState: T, protected readonly desiredState: T) {}
 
   // They can have access to initialState and desiredState through this
   /*
@@ -22,6 +22,6 @@ export abstract class Command {
     Saga-pattern is: each command begin sequence of events, which make execute listeners local transactions in their DBs, and when some transaction was failed,
     listener should start sequence of revert events for make distributed transaction rollback.
   */
-  abstract execute(): Promise<any>;
-  abstract rollback(): Promise<any>;
+  abstract execute(): Promise<T>;
+  abstract rollback(): Promise<T>;
 }

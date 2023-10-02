@@ -1,8 +1,8 @@
-import { IReportDefinition } from '../..';
+import { ReportInputPort } from '../..';
 
 export interface ReportOutputPort {
-  subscribe(output: IReportDefinition[]): Promise<any>;
-  unsubscribe(output: IReportDefinition[]): Promise<any>;
-  getSubscriptions(output: IReportDefinition[]): Promise<any>;
-  generateReport(output: any): Promise<any>;
+  subscribe<R>(output: Awaited<ReturnType<ReportInputPort['subscribe']>>, exception: unknown): Promise<R>;
+  unsubscribe<R>(output: Awaited<ReturnType<ReportInputPort['unsubscribe']>>, exception: unknown): Promise<R>;
+  getSubscriptions<R>(output: Awaited<ReturnType<ReportInputPort['getSubscriptions']>>, exception: unknown): Promise<R>;
+  generateReport<R>(output: Awaited<ReturnType<ReportInputPort['generateReport']>>, exception: unknown): Promise<R>;
 }

@@ -1,3 +1,3 @@
-export interface IConfigService {
-  getConfigValue(key: string): Promise<any>;
+export interface IConfigService<T> {
+  getConfigValue(key: string): Promise<T>;
 }

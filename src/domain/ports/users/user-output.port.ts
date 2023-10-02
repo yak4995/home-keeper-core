@@ -1,14 +1,14 @@
-import { IUser } from '../..';
+import { UserInputPort } from '../..';
 
 export interface UserOutputPort {
   // for internal usage
-  addUser(output: IUser): Promise<any>;
+  addUser<R>(output: Awaited<ReturnType<UserInputPort['addUser']>>, exception: unknown): Promise<R>;
   // mixed
-  getUserById(output: IUser): Promise<any>;
+  getUserById<R>(output: Awaited<ReturnType<UserInputPort['getUserById']>>, exception: unknown): Promise<R>;
   // ony for user itself
-  changeProfileInfo(output: IUser): Promise<any>;
-  deleteAccount(output: IUser): Promise<any>;
+  changeProfileInfo<R>(output: Awaited<ReturnType<UserInputPort['changeProfileInfo']>>, exception: unknown): Promise<R>;
+  deleteAccount<R>(output: Awaited<ReturnType<UserInputPort['deleteAccount']>>, exception: unknown): Promise<R>;
   // only for administrators
-  updateUser(output: IUser): Promise<any>;
-  getAllUsers(output: IUser[]): Promise<any>;
+  updateUser<R>(output: Awaited<ReturnType<UserInputPort['updateUser']>>, exception: unknown): Promise<R>;
+  getAllUsers<R>(output: Awaited<ReturnType<UserInputPort['getAllUsers']>>, exception: unknown): Promise<R>;
 }

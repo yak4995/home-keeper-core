@@ -1,8 +1,20 @@
-import { IAnalyticComparisonDto } from '..';
+import { BudgetAnalyticInputPort } from '..';
 
 export interface BudgetAnalyticOutputPort {
-  getMaxDifference(output: number): Promise<number>;
-  getMinDifference(output: number): Promise<number>;
-  getBudgetsRatio(output: IAnalyticComparisonDto): Promise<any>;
-  getBudgetsChange(output: IAnalyticComparisonDto): Promise<any>;
+  getMaxDifference<R>(
+    output: Awaited<ReturnType<BudgetAnalyticInputPort['getMaxDifference']>>,
+    exception: unknown,
+  ): Promise<R>;
+  getMinDifference<R>(
+    output: Awaited<ReturnType<BudgetAnalyticInputPort['getMinDifference']>>,
+    exception: unknown,
+  ): Promise<R>;
+  getBudgetsRatio<R>(
+    output: Awaited<ReturnType<BudgetAnalyticInputPort['getBudgetsRatio']>>,
+    exception: unknown,
+  ): Promise<R>;
+  getBudgetsChange<R>(
+    output: Awaited<ReturnType<BudgetAnalyticInputPort['getBudgetsChange']>>,
+    exception: unknown,
+  ): Promise<R>;
 }

@@ -1,3 +1,7 @@
+import { CustomRecord } from '../../custom-record.type';
+
 export interface NotificationsInputPort {
-  sendMessage(method: any, sender: any, reciever: any, message: any): Promise<boolean>;
+  // method is type of transport (for example email or sms or HTTP, etc), some enum
+  // sender and reciever (for example email/phone/port/URL)
+  sendMessage(method: string, sender: string, reciever: string, message: CustomRecord): Promise<boolean>;
 }

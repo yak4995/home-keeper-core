@@ -1,9 +1,18 @@
-import { IStockItem } from '../..';
+import { StockItemInputPort } from '../..';
 
 export interface StockItemOutputPort {
-  getStockItemsList(output: IStockItem[]): Promise<any>;
-  getStockItemsDetails(output: IStockItem): Promise<any>;
-  addStockItem(output: IStockItem): Promise<any>;
-  editStockItem(output: IStockItem): Promise<any>;
-  deleteStockItem(output: IStockItem): Promise<any>;
+  getStockItemsList<R>(
+    output: Awaited<ReturnType<StockItemInputPort['getStockItemsList']>>,
+    exception: unknown,
+  ): Promise<R>;
+  getStockItemsDetails<R>(
+    output: Awaited<ReturnType<StockItemInputPort['getStockItemsDetails']>>,
+    exception: unknown,
+  ): Promise<R>;
+  addStockItem<R>(output: Awaited<ReturnType<StockItemInputPort['addStockItem']>>, exception: unknown): Promise<R>;
+  editStockItem<R>(output: Awaited<ReturnType<StockItemInputPort['editStockItem']>>, exception: unknown): Promise<R>;
+  deleteStockItem<R>(
+    output: Awaited<ReturnType<StockItemInputPort['deleteStockItem']>>,
+    exception: unknown,
+  ): Promise<R>;
 }
