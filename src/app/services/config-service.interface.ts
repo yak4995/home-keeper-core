@@ -1,3 +1,3 @@
-export interface IConfigService<T> {
-  getConfigValue(key: string): Promise<T>;
+export interface IConfigService {
+  getConfigValue<T>(key: string, outputTypeMapper: (arg: string) => T): Promise<T>;
 }

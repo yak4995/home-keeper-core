@@ -1,7 +1,21 @@
+import { ICurrencyDto, ILangDto, ITzDto, InputPort } from '..';
 import { ICurrency, ID, ILanguage, ITimezone } from '../..';
-import { ICurrencyDto, ILangDto, ITzDto } from '..';
 
-export interface SystemInputPort {
+export interface SystemInputPort
+  extends InputPort<
+    | 'getAllCurrencies'
+    | 'getCurrencyById'
+    | 'createCurrency'
+    | 'updateCurrency'
+    | 'getAllLanguages'
+    | 'getLangById'
+    | 'createLanguage'
+    | 'updateLanguage'
+    | 'getAllTimezones'
+    | 'getTzById'
+    | 'createTimezone'
+    | 'updateTimezone'
+  > {
   getAllCurrencies(): Promise<ICurrency[]>;
   getCurrencyById(id: ID): Promise<ICurrency>;
   createCurrency(payload: ICurrencyDto): Promise<ICurrency>;

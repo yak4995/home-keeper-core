@@ -1,7 +1,21 @@
-import { IHousehold, IAmortizationProject, ID, IBudget, IConsumedResourceItem, IMaintenanceItem } from '../..';
-import { IAmortizationDto, IMaintenanceItemDto, IConsumedResourceItemDto } from '..';
+import { IAmortizationDto, IMaintenanceItemDto, IConsumedResourceItemDto, InputPort } from '..';
 
-export interface AmortizationInputPort {
+import { IHousehold, IAmortizationProject, ID, IBudget, IConsumedResourceItem, IMaintenanceItem } from '../..';
+
+export interface AmortizationInputPort
+  extends InputPort<
+    | 'getAmortizations'
+    | 'getAmortizationDetails'
+    | 'addAmortization'
+    | 'editAmortization'
+    | 'addMaintenanceItem'
+    | 'editMaintenanceItem'
+    | 'deleteMaintenanceItem'
+    | 'addConsumedResourceItem'
+    | 'editConsumedResourceItem'
+    | 'deleteConsumedResourceItem'
+    | 'deleteAmortization'
+  > {
   getAmortizations(owner: IHousehold): Promise<IAmortizationProject[]>;
   getAmortizationDetails(id: ID): Promise<IAmortizationProject>;
   addAmortization(payload: IAmortizationDto): Promise<IAmortizationProject>;

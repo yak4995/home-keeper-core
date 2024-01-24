@@ -1,7 +1,9 @@
-import { ID, IDebt, IHousehold } from '../..';
-import { IDebtDto } from '..';
+import { IDebtDto, InputPort } from '..';
 
-export interface DebtInputPort {
+import { ID, IDebt, IHousehold } from '../..';
+
+export interface DebtInputPort
+  extends InputPort<'getDebtsList' | 'getDebtDetails' | 'addDebt' | 'editDebt' | 'deleteDebt'> {
   getDebtsList(owner: IHousehold): Promise<IDebt[]>;
   getDebtDetails(id: ID): Promise<IDebt>;
   addDebt(payload: IDebtDto): Promise<IDebt>;

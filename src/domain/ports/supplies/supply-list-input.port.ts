@@ -1,7 +1,10 @@
+import { ISupplyListItemDto, InputPort } from '..';
 import { ID, ISupplyList, ISupplyListItem } from '../..';
-import { ISupplyListItemDto } from '..';
 
-export interface SupplyListInputPort {
+export interface SupplyListInputPort
+  extends InputPort<
+    'getSupplyLists' | 'getSupplyListDetails' | 'addSupplyListItem' | 'editSupplyListItem' | 'deleteSupplyListItem'
+  > {
   getSupplyLists(ownerID: ID): Promise<ISupplyList[]>;
   getSupplyListDetails(id: ID): Promise<ISupplyList>;
   addSupplyListItem(payload: ISupplyListItemDto): Promise<ISupplyListItem>;

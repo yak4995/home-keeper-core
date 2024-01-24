@@ -1,7 +1,17 @@
+import { ITransactionCategoryDto, InputPort } from '..';
 import { ID, ITransactionCategory } from '../..';
-import { ITransactionCategoryDto } from '..';
 
-export interface TransactionCategoryInputPort {
+export interface TransactionCategoryInputPort
+  extends InputPort<
+    | 'getTransactionCategoryChildren'
+    | 'getCategoryDirectChildren'
+    | 'getTopCategories'
+    | 'getOwnCategories'
+    | 'searchCategory'
+    | 'addCategory'
+    | 'updateCategory'
+    | 'deleteCategory'
+  > {
   getTransactionCategoryChildren(ownerId: ID, id: ID): Promise<ITransactionCategory[]>;
   getCategoryDirectChildren(ownerId: ID, id: ID): Promise<ITransactionCategory[]>;
   getTopCategories(ownerId: ID): Promise<ITransactionCategory[]>;

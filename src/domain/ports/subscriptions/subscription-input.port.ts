@@ -1,7 +1,10 @@
+import { ISubscriptionDto, InputPort } from '..';
 import { ID, ISubscription } from '../..';
-import { ISubscriptionDto } from '..';
 
-export interface SubscriptionInputPort {
+export interface SubscriptionInputPort
+  extends InputPort<
+    'getSubscriptionsList' | 'getSubscriptionDetails' | 'addSubscription' | 'editSubscription' | 'deleteSubscription'
+  > {
   getSubscriptionsList(ownerId: ID): Promise<ISubscription[]>;
   getSubscriptionDetails(id: ID): Promise<ISubscription>;
   addSubscription(payload: ISubscriptionDto): Promise<ISubscription>;

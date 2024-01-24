@@ -1,7 +1,14 @@
+import { IStockTransactionDto, IStockTransactionListDto, InputPort } from '..';
 import { ID, IStockTransaction } from '../..';
-import { IStockTransactionDto, IStockTransactionListDto } from '..';
 
-export interface StockTransactionInputPort {
+export interface StockTransactionInputPort
+  extends InputPort<
+    | 'getStockTransactionsList'
+    | 'getStockTransactionDetails'
+    | 'addStockTransaction'
+    | 'editStockTransaction'
+    | 'deleteStockTransaction'
+  > {
   getStockTransactionsList(ownerId: ID, payload: IStockTransactionListDto): Promise<IStockTransaction[]>;
   getStockTransactionDetails(id: ID): Promise<IStockTransaction>;
   addStockTransaction(payload: IStockTransactionDto): Promise<IStockTransaction>;

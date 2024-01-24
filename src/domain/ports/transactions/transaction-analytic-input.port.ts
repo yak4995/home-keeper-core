@@ -1,6 +1,16 @@
-import { IAnalyticComparisonDto, ITransactionAnalyticDto } from '..';
+import { IAnalyticComparisonDto, ITransactionAnalyticDto, InputPort } from '..';
 
-export interface TransactionAnalyticInputPort {
+export interface TransactionAnalyticInputPort
+  extends InputPort<
+    | 'getMaxTransaction'
+    | 'getMinTransaction'
+    | 'getTransactionsCount'
+    | 'getTransactionsSum'
+    | 'getTransactionsAverage'
+    | 'getTransactionsMedian'
+    | 'getTransactionsRatio'
+    | 'getTransactionsChange'
+  > {
   getMaxTransaction(payload: ITransactionAnalyticDto): Promise<number>;
   getMinTransaction(payload: ITransactionAnalyticDto): Promise<number>;
   getTransactionsCount(payload: ITransactionAnalyticDto): Promise<number>;

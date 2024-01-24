@@ -1,3 +1,6 @@
+export * from './input-port.type';
+export * from './output-port.type';
+
 export * from './analytic.dto';
 export * from './analytic-comparison.dto';
 

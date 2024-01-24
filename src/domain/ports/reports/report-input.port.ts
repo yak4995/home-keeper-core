@@ -1,7 +1,9 @@
-import { ID, IReportDefinition } from '../..';
-import { IReportDefinitionDto } from '..';
+import { IReportDefinitionDto, InputPort } from '..';
 
-export interface ReportInputPort {
+import { ID, IReportDefinition } from '../..';
+
+export interface ReportInputPort
+  extends InputPort<'subscribe' | 'unsubscribe' | 'getSubscriptions' | 'generateReport'> {
   subscribe(userId: ID, payload: IReportDefinitionDto): Promise<IReportDefinition[]>;
   unsubscribe(userId: ID, payload: IReportDefinitionDto): Promise<IReportDefinition[]>;
   getSubscriptions(userId: ID): Promise<IReportDefinition[]>;

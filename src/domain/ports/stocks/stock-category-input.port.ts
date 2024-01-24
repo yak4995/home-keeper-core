@@ -1,7 +1,10 @@
+import { IStockCategoryDto, InputPort } from '..';
 import { ID, IStockCategory } from '../..';
-import { IStockCategoryDto } from '..';
 
-export interface StockCategoryInputPort {
+export interface StockCategoryInputPort
+  extends InputPort<
+    'getRootCategories' | 'getCategoryChildren' | 'addStockCategory' | 'editStockCategory' | 'deleteStockCategory'
+  > {
   getRootCategories(id: ID): Promise<IStockCategory[]>;
   getCategoryChildren(id: ID): Promise<IStockCategory[]>;
   addStockCategory(payload: IStockCategoryDto): Promise<IStockCategory>;

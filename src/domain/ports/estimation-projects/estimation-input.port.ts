@@ -1,7 +1,17 @@
+import { IEstimationDto, IEstimationItemDto, InputPort } from '..';
 import { ID, IEstimationProject, IEstimationProjectItem, IHousehold } from '../..';
-import { IEstimationDto, IEstimationItemDto } from '..';
 
-export interface EstimationInputPort {
+export interface EstimationInputPort
+  extends InputPort<
+    | 'getEstimations'
+    | 'getEstimationDetails'
+    | 'addEstimation'
+    | 'editEstimation'
+    | 'addEstimationItem'
+    | 'editEstimationItem'
+    | 'deleteEstimationItem'
+    | 'deleteEstimation'
+  > {
   getEstimations(owner: IHousehold, from: Date, to: Date): Promise<IEstimationProject[]>;
   getEstimationDetails(id: ID): Promise<IEstimationProject>;
   addEstimation(payload: IEstimationDto): Promise<IEstimationProject>;

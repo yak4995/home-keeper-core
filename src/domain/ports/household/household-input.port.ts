@@ -1,6 +1,20 @@
-import { ID, IHousehold, IHouseholdInvitation } from '../..';
+import { ID, IHousehold, IHouseholdInvitation, InputPort } from '../..';
 
-export interface HouseholdInputPort {
+export interface HouseholdInputPort
+  extends InputPort<
+    | 'invite'
+    | 'getSentInvitations'
+    | 'deleteInvitation'
+    | 'createHousehold'
+    | 'getUserHouseholds'
+    | 'getHousehold'
+    | 'editHousehold'
+    | 'leave'
+    | 'getInvitations'
+    | 'accept'
+    | 'reject'
+    | 'deleteHousehold'
+  > {
   // from household member
   invite(userId: ID, householdId: ID): Promise<boolean>;
   getSentInvitations(householdId: ID): Promise<IHouseholdInvitation[]>;

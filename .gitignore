@@ -108,3 +108,5 @@ dist
 
 #Build
 /lib
+
+.DS_Store

@@ -1,9 +1,10 @@
+import { IUserDto, IUserProfileDto, InputPort } from '..';
 import { ID, IUser } from '../..';
-import { IUserDto, IUserProfileDto } from '..';
 
-export interface UserInputPort {
+export interface UserInputPort
+  extends InputPort<'addUser' | 'getUserById' | 'changeProfileInfo' | 'deleteAccount' | 'updateUser' | 'getAllUsers'> {
   // for internal usage
-  addUser(authenticationData: Partial<IUser>): Promise<IUser>;
+  addUser<I>(authenticationData: I): Promise<IUser>;
   // mixed
   getUserById(id: ID): Promise<IUser>;
   // ony for user itself

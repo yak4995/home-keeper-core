@@ -1,7 +1,11 @@
-import { IUser, IAccount, ID } from '../..';
-import { IAccountDto } from '..';
+import { IAccountDto, InputPort } from '..';
 
-export interface AccountInputPort {
+import { IUser, IAccount, ID } from '../..';
+
+export interface AccountInputPort
+  extends InputPort<
+    'createAccount' | 'getAccounts' | 'getAccountDetails' | 'getBalance' | 'updateAccount' | 'deleteAccount'
+  > {
   createAccount(user: IUser, payload: IAccountDto): Promise<IAccount>;
   getAccounts(user: IUser): Promise<IAccount[]>;
   getAccountDetails(id: ID): Promise<IAccount>;

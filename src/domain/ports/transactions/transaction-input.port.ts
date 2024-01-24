@@ -1,7 +1,10 @@
+import { ITransactionDto, ITransactionFilterDto, InputPort } from '..';
 import { ID, ITransaction, OrderCriteria } from '../..';
-import { ITransactionDto, ITransactionFilterDto } from '..';
 
-export interface TransactionInputPort {
+export interface TransactionInputPort
+  extends InputPort<
+    'getTransactionDetails' | 'getTransactions' | 'addTransaction' | 'updateTransaction' | 'deleteTransaction'
+  > {
   getTransactionDetails(id: ID): Promise<ITransaction>;
   getTransactions(
     page: number,

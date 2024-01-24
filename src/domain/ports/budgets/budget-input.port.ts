@@ -1,7 +1,17 @@
+import { IBudgetDto, IBudgetItemDto, InputPort } from '..';
 import { IBudget, IBudgetItem, ID, IHousehold } from '../..';
-import { IBudgetDto, IBudgetItemDto } from '..';
 
-export interface BudgetInputPort {
+export interface BudgetInputPort
+  extends InputPort<
+    | 'getBudgets'
+    | 'getBudgetDetails'
+    | 'addBudget'
+    | 'editBudget'
+    | 'addBudgetItem'
+    | 'editBudgetItem'
+    | 'deleteBudgetItem'
+    | 'deleteBudget'
+  > {
   getBudgets(owner: IHousehold, accountIds: ID[], from: Date, to: Date): Promise<IBudget[]>;
   getBudgetDetails(id: ID): Promise<IBudget>;
   addBudget(payload: IBudgetDto): Promise<IBudget>;

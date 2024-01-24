@@ -1,7 +1,10 @@
+import { IStockItemDto, InputPort } from '..';
 import { ID, IStockItem } from '../..';
-import { IStockItemDto } from '..';
 
-export interface StockItemInputPort {
+export interface StockItemInputPort
+  extends InputPort<
+    'getStockItemsList' | 'getStockItemsDetails' | 'addStockItem' | 'editStockItem' | 'deleteStockItem'
+  > {
   getStockItemsList(ownerId: ID): Promise<IStockItem[]>;
   getStockItemsDetails(id: ID): Promise<IStockItem>;
   addStockItem(payload: IStockItemDto): Promise<IStockItem>;
