@@ -1,10 +1,10 @@
 import { IUserDto, IUserProfileDto, InputPort } from '..';
-import { ID, IUser } from '../..';
+import { CustomRecord, ID, IUser } from '../..';
 
 export interface UserInputPort
   extends InputPort<'addUser' | 'getUserById' | 'changeProfileInfo' | 'deleteAccount' | 'updateUser' | 'getAllUsers'> {
   // for internal usage
-  addUser<I>(authenticationData: I): Promise<IUser>;
+  addUser(authenticationData: CustomRecord): Promise<IUser>;
   // mixed
   getUserById(id: ID): Promise<IUser>;
   // ony for user itself

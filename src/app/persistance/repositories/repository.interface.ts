@@ -8,7 +8,7 @@ export interface IRepository<T extends IPersistantEntity> {
   findOneByAndCriteria(searchCriteria: Criteria<T>): Promise<T>;
   findByAndCriteria(searchCriteria: Criteria<T>): Promise<T[]>;
   findByOrCriteria(searchCriteria: Criteria<T>): Promise<T[]>;
-  update(updateData: Criteria<T>, id: ID): Promise<T[]>;
+  update(updateData: Criteria<T>, id: ID): Promise<T>;
   delete(deleteCriteria: Criteria<T>): Promise<T[]>;
   getRelatedEntity<V>(id: ID, fieldName: keyof T): Promise<V>;
   getRelatedEntities<V>(id: ID, fieldName: keyof T): Promise<V[]>;

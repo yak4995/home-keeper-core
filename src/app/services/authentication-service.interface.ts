@@ -1,8 +1,8 @@
-import { IUser } from '../..';
+import { CustomRecord, IUser } from '../..';
 
 export interface IAuthenticationService<T extends IUser> {
-  signUp<I>(authenticationData: I): Promise<Partial<T>>;
-  signIn<I, R>(authenticationData: I): Promise<R>;
-  signOut<I>(authenticationData: I): Promise<boolean>;
+  signUp(authenticationData: CustomRecord): Promise<Partial<T>>;
+  signIn(authenticationData: CustomRecord): Promise<IUser>;
+  signOut(authenticationData: CustomRecord): Promise<boolean>;
   currentUser(authenticationData: Partial<T>): Promise<Partial<T>>;
 }
