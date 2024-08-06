@@ -1,7 +1,7 @@
 import { Criteria, IConsumedResourceItem, IEntityCreator, IRepository } from '../../../..';
 
 export abstract class ConsumedResourceItemAbstractFactory {
-  protected constructor(private entityCreator: IEntityCreator<IConsumedResourceItem>) {}
+  protected constructor(protected entityCreator: IEntityCreator<IConsumedResourceItem>) {}
 
   public static setInstance(instance: ConsumedResourceItemAbstractFactory): void {
     this.instance = instance;

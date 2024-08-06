@@ -1,7 +1,7 @@
 import { Criteria, IEntityCreator, ILanguage, IRepository } from '../../../..';
 
 export abstract class LanguageAbstractFactory {
-  protected constructor(private entityCreator: IEntityCreator<ILanguage>) {}
+  protected constructor(protected entityCreator: IEntityCreator<ILanguage>) {}
 
   protected static instance: LanguageAbstractFactory = null;
 

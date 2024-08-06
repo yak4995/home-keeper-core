@@ -1,7 +1,7 @@
 import { Criteria, IEntityCreator, IRepository, ITaxesReportDefinition } from '../../../..';
 
 export abstract class TaxesReportDefinitionAbstractFactory {
-  protected constructor(private entityCreator: IEntityCreator<ITaxesReportDefinition>) {}
+  protected constructor(protected entityCreator: IEntityCreator<ITaxesReportDefinition>) {}
 
   protected static instance: TaxesReportDefinitionAbstractFactory = null;
 

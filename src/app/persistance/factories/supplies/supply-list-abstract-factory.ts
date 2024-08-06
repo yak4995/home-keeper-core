@@ -1,7 +1,7 @@
 import { Criteria, IEntityCreator, IRepository, ISupplyList } from '../../../..';
 
 export abstract class SupplyListAbstractFactory {
-  protected constructor(private entityCreator: IEntityCreator<ISupplyList>) {}
+  protected constructor(protected entityCreator: IEntityCreator<ISupplyList>) {}
 
   protected static instance: SupplyListAbstractFactory = null;
 

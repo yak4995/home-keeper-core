@@ -1,7 +1,7 @@
 import { Criteria, IAmortizationProject, IEntityCreator, IRepository } from '../../../..';
 
 export abstract class AmortizationProjectAbstractFactory {
-  protected constructor(private entityCreator: IEntityCreator<IAmortizationProject>) {}
+  protected constructor(protected entityCreator: IEntityCreator<IAmortizationProject>) {}
 
   protected static instance: AmortizationProjectAbstractFactory = null;
 

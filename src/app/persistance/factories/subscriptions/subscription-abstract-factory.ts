@@ -1,7 +1,7 @@
 import { Criteria, IEntityCreator, IRepository, ISubscription } from '../../../..';
 
 export abstract class SubscriptionAbstractFactory {
-  protected constructor(private entityCreator: IEntityCreator<ISubscription>) {}
+  protected constructor(protected entityCreator: IEntityCreator<ISubscription>) {}
 
   protected static instance: SubscriptionAbstractFactory = null;
 
