@@ -1,7 +1,10 @@
 import { Criteria, IEntityCreator, IRepository, ITimezone } from '../../../..';
+import { EntityAbstractFactory } from '../../factories/entity-abstract-factory';
 
-export abstract class TimezoneAbstractFactory {
-  protected constructor(protected entityCreator: IEntityCreator<ITimezone>) {}
+export abstract class TimezoneAbstractFactory extends EntityAbstractFactory<ITimezone> {
+  protected constructor(entityCreator: IEntityCreator<ITimezone>) {
+    super(entityCreator);
+  }
 
   protected static instance: TimezoneAbstractFactory = null;
 

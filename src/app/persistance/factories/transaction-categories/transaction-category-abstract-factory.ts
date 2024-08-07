@@ -1,7 +1,10 @@
 import { Criteria, IEntityCreator, IRepository, ITransactionCategory } from '../../../..';
+import { EntityAbstractFactory } from '../../factories/entity-abstract-factory';
 
-export abstract class TransactionCategoryAbstractFactory {
-  protected constructor(protected entityCreator: IEntityCreator<ITransactionCategory>) {}
+export abstract class TransactionCategoryAbstractFactory extends EntityAbstractFactory<ITransactionCategory> {
+  protected constructor(entityCreator: IEntityCreator<ITransactionCategory>) {
+    super(entityCreator);
+  }
 
   protected static instance: TransactionCategoryAbstractFactory = null;
 

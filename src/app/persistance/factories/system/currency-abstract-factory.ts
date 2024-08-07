@@ -1,7 +1,10 @@
 import { Criteria, ICurrency, IEntityCreator, IRepository } from '../../../..';
+import { EntityAbstractFactory } from '../../factories/entity-abstract-factory';
 
-export abstract class CurrencyAbstractFactory {
-  protected constructor(protected entityCreator: IEntityCreator<ICurrency>) {}
+export abstract class CurrencyAbstractFactory extends EntityAbstractFactory<ICurrency> {
+  protected constructor(entityCreator: IEntityCreator<ICurrency>) {
+    super(entityCreator);
+  }
 
   protected static instance: CurrencyAbstractFactory = null;
 
