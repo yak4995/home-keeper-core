@@ -1,35 +1,25 @@
-import { ID, IHousehold, IHouseholdInvitation, InputPort } from '../..';
+import { InputPort } from '..';
+import { CustomGeneralType, ID, IIdentificationDto } from '../..';
 
 export interface HouseholdInputPort
-  extends InputPort<
-    | 'invite'
-    | 'getSentInvitations'
-    | 'deleteInvitation'
-    | 'createHousehold'
-    | 'getUserHouseholds'
-    | 'getHousehold'
-    | 'editHousehold'
-    | 'leave'
-    | 'getInvitations'
-    | 'accept'
-    | 'reject'
-    | 'deleteHousehold'
-  > {
-  // from household member
-  invite(userId: ID, householdId: ID): Promise<boolean>;
-  getSentInvitations(householdId: ID): Promise<IHouseholdInvitation[]>;
-  deleteInvitation(id: ID): Promise<IHouseholdInvitation>;
-  createHousehold(memberId: ID, name: string): Promise<IHousehold>;
-  getUserHouseholds(memberId: ID): Promise<IHousehold[]>;
-  getHousehold(id: ID): Promise<IHousehold>;
-  editHousehold(id: ID, name: string): Promise<boolean>;
-  leave(userId: ID, householdId: ID): Promise<boolean>;
+  extends InputPort<{
+    // from household member:
+    getSentInvitations: [IIdentificationDto, CustomGeneralType];
+    createInvitation: [{ userId: ID } & IIdentificationDto, CustomGeneralType];
+    deleteInvitation: [IIdentificationDto, CustomGeneralType];
 
-  // from external user
-  getInvitations(userId: ID): Promise<string[]>;
-  accept(userId: ID, householdId: ID): Promise<boolean>;
-  reject(userId: ID, householdId: ID): Promise<boolean>;
+    getUserHouseholds: [{ memberId: ID }, CustomGeneralType];
+    getHousehold: [IIdentificationDto, CustomGeneralType];
 
-  // from system
-  deleteHousehold(): Promise<boolean>;
-}
+    createHousehold: [{ memberId: ID; name: string }, CustomGeneralType];
+    updateHousehold: [{ name: string } & IIdentificationDto, CustomGeneralType];
+    leave: [{ userId: ID } & IIdentificationDto, CustomGeneralType];
+
+    // from external user:
+    getInvitations: [{ userId: ID }, CustomGeneralType];
+    accept: [{ userId: ID } & IIdentificationDto, CustomGeneralType];
+    reject: [{ userId: ID } & IIdentificationDto, CustomGeneralType];
+
+    // from system:
+    deleteHousehold: [IIdentificationDto, CustomGeneralType];
+  }> {}

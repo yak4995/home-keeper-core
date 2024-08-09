@@ -1,7 +1,13 @@
-import { AccountInputPort, OutputPort } from '../..';
+import { OutputPort } from '..';
+import { CustomGeneralType, IAccount } from '../..';
 
 export interface AccountOutputPort
-  extends OutputPort<
-    'createAccount' | 'getAccounts' | 'getAccountDetails' | 'getBalance' | 'updateAccount' | 'deleteAccount',
-    AccountInputPort
-  > {}
+  extends OutputPort<{
+    getAccounts: [IAccount[], CustomGeneralType];
+    getAccountDetails: [IAccount, CustomGeneralType];
+    getBalance: [number, CustomGeneralType];
+
+    createAccount: [IAccount, CustomGeneralType];
+    updateAccount: [IAccount, CustomGeneralType];
+    deleteAccount: [IAccount, CustomGeneralType];
+  }> {}

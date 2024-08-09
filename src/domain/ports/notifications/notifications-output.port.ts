@@ -1,5 +1,9 @@
-import { OutputPort } from '../output-port.type';
-import { NotificationsInputPort } from './notifications-input.port';
+import { OutputPort } from '..';
+import { CustomGeneralType } from '../..';
 
 export interface NotificationsOutputPort
-  extends OutputPort<'sendMessage' /* | 'another action' | ...*/, NotificationsInputPort> {}
+  extends OutputPort<{
+    // method is type of transport (for example email or sms or HTTP, etc), some enum
+    // sender and reciever (for example email/phone/port/URL)
+    sendMessage: [boolean, CustomGeneralType];
+  }> {}

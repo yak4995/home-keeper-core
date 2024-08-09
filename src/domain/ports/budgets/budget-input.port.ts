@@ -1,23 +1,16 @@
-import { IBudgetDto, IBudgetItemDto, InputPort } from '..';
-import { IBudget, IBudgetItem, ID, IHousehold } from '../..';
+import { IBudgetDto, IBudgetItemDto, IIdentificationDto, InputPort } from '..';
+import { CustomGeneralType, ID, IHousehold } from '../..';
 
 export interface BudgetInputPort
-  extends InputPort<
-    | 'getBudgets'
-    | 'getBudgetDetails'
-    | 'addBudget'
-    | 'editBudget'
-    | 'addBudgetItem'
-    | 'editBudgetItem'
-    | 'deleteBudgetItem'
-    | 'deleteBudget'
-  > {
-  getBudgets(owner: IHousehold, accountIds: ID[], from: Date, to: Date): Promise<IBudget[]>;
-  getBudgetDetails(id: ID): Promise<IBudget>;
-  addBudget(payload: IBudgetDto): Promise<IBudget>;
-  editBudget(id: ID, payload: IBudgetDto): Promise<IBudget>;
-  addBudgetItem(budgetId: ID, payload: IBudgetItemDto): Promise<IBudgetItem>;
-  editBudgetItem(id: ID, payload: IBudgetItemDto): Promise<IBudgetItem>;
-  deleteBudgetItem(id: ID): Promise<IBudgetItem>;
-  deleteBudget(id: ID): Promise<IBudget>;
-}
+  extends InputPort<{
+    getBudgets: [{ owner: IHousehold; accountIds: ID[]; from: Date; to: Date }, CustomGeneralType];
+    getBudgetDetails: [IIdentificationDto, CustomGeneralType];
+
+    createBudget: [IBudgetDto, CustomGeneralType];
+    updateBudget: [IIdentificationDto & IBudgetDto, CustomGeneralType];
+    deleteBudget: [IIdentificationDto, CustomGeneralType];
+
+    createBudgetItem: [{ budgetId: ID } & IBudgetItemDto, CustomGeneralType];
+    updateBudgetItem: [IIdentificationDto & IBudgetItemDto, CustomGeneralType];
+    deleteBudgetItem: [IIdentificationDto, CustomGeneralType];
+  }> {}

@@ -1,7 +1,10 @@
-import { BudgetAnalyticInputPort, OutputPort } from '..';
+import { IAnalyticComparisonDto, OutputPort } from '..';
+import { CustomGeneralType } from '../..';
 
 export interface BudgetAnalyticOutputPort
-  extends OutputPort<
-    'getMaxDifference' | 'getMinDifference' | 'getBudgetsRatio' | 'getBudgetsChange',
-    BudgetAnalyticInputPort
-  > {}
+  extends OutputPort<{
+    getMaxDifference: [number, CustomGeneralType];
+    getMinDifference: [number, CustomGeneralType];
+    getBudgetsRatio: [IAnalyticComparisonDto, CustomGeneralType];
+    getBudgetsChange: [IAnalyticComparisonDto, CustomGeneralType];
+  }> {}

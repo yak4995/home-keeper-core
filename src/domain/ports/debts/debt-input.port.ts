@@ -1,12 +1,12 @@
-import { IDebtDto, InputPort } from '..';
-
-import { ID, IDebt, IHousehold } from '../..';
+import { IDebtDto, IIdentificationDto, InputPort } from '..';
+import { CustomGeneralType, IHousehold } from '../..';
 
 export interface DebtInputPort
-  extends InputPort<'getDebtsList' | 'getDebtDetails' | 'addDebt' | 'editDebt' | 'deleteDebt'> {
-  getDebtsList(owner: IHousehold): Promise<IDebt[]>;
-  getDebtDetails(id: ID): Promise<IDebt>;
-  addDebt(payload: IDebtDto): Promise<IDebt>;
-  editDebt(id: ID, payload: IDebtDto): Promise<IDebt>;
-  deleteDebt(id: ID): Promise<IDebt>;
-}
+  extends InputPort<{
+    getDebtsList: [IHousehold, CustomGeneralType];
+    getDebtDetails: [IIdentificationDto, CustomGeneralType];
+
+    createDebt: [IDebtDto, CustomGeneralType];
+    updateDebt: [IIdentificationDto & IDebtDto, CustomGeneralType];
+    deleteDebt: [IIdentificationDto, CustomGeneralType];
+  }> {}

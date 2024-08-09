@@ -1,23 +1,16 @@
-import { IEstimationDto, IEstimationItemDto, InputPort } from '..';
-import { ID, IEstimationProject, IEstimationProjectItem, IHousehold } from '../..';
+import { IEstimationDto, IEstimationItemDto, IIdentificationDto, InputPort } from '..';
+import { CustomGeneralType, ID, IHousehold } from '../..';
 
 export interface EstimationInputPort
-  extends InputPort<
-    | 'getEstimations'
-    | 'getEstimationDetails'
-    | 'addEstimation'
-    | 'editEstimation'
-    | 'addEstimationItem'
-    | 'editEstimationItem'
-    | 'deleteEstimationItem'
-    | 'deleteEstimation'
-  > {
-  getEstimations(owner: IHousehold, from: Date, to: Date): Promise<IEstimationProject[]>;
-  getEstimationDetails(id: ID): Promise<IEstimationProject>;
-  addEstimation(payload: IEstimationDto): Promise<IEstimationProject>;
-  editEstimation(id: ID, payload: IEstimationDto): Promise<IEstimationProject>;
-  addEstimationItem(estimationId: ID, payload: IEstimationItemDto): Promise<IEstimationProjectItem>;
-  editEstimationItem(id: ID, payload: IEstimationItemDto): Promise<IEstimationProjectItem>;
-  deleteEstimationItem(id: ID): Promise<IEstimationProjectItem>;
-  deleteEstimation(id: ID): Promise<IEstimationProject>;
-}
+  extends InputPort<{
+    getEstimations: [{ owner: IHousehold; from: Date; to: Date }, CustomGeneralType];
+    getEstimationDetails: [IIdentificationDto, CustomGeneralType];
+
+    createEstimation: [IEstimationDto, CustomGeneralType];
+    updateEstimation: [IIdentificationDto & IEstimationDto, CustomGeneralType];
+    deleteEstimation: [IIdentificationDto, CustomGeneralType];
+
+    createEstimationItem: [{ estimationId: ID } & IEstimationItemDto, CustomGeneralType];
+    updateEstimationItem: [IIdentificationDto & IEstimationItemDto, CustomGeneralType];
+    deleteEstimationItem: [IIdentificationDto, CustomGeneralType];
+  }> {}

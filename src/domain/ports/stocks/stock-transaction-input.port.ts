@@ -1,17 +1,12 @@
-import { IStockTransactionDto, IStockTransactionListDto, InputPort } from '..';
-import { ID, IStockTransaction } from '../..';
+import { IIdentificationDto, IStockTransactionDto, IStockTransactionListDto, InputPort } from '..';
+import { CustomGeneralType, ID } from '../..';
 
 export interface StockTransactionInputPort
-  extends InputPort<
-    | 'getStockTransactionsList'
-    | 'getStockTransactionDetails'
-    | 'addStockTransaction'
-    | 'editStockTransaction'
-    | 'deleteStockTransaction'
-  > {
-  getStockTransactionsList(ownerId: ID, payload: IStockTransactionListDto): Promise<IStockTransaction[]>;
-  getStockTransactionDetails(id: ID): Promise<IStockTransaction>;
-  addStockTransaction(payload: IStockTransactionDto): Promise<IStockTransaction>;
-  editStockTransaction(id: ID, payload: IStockTransactionDto): Promise<IStockTransaction>;
-  deleteStockTransaction(id: ID): Promise<IStockTransaction>;
-}
+  extends InputPort<{
+    getStockTransactionsList: [{ ownerId: ID } & IStockTransactionListDto, CustomGeneralType];
+    getStockTransactionDetails: [IIdentificationDto, CustomGeneralType];
+
+    createStockTransaction: [IStockTransactionDto, CustomGeneralType];
+    updateStockTransaction: [IIdentificationDto & IStockTransactionDto, CustomGeneralType];
+    deleteStockTransaction: [IIdentificationDto, CustomGeneralType];
+  }> {}

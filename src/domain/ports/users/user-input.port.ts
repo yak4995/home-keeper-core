@@ -1,16 +1,18 @@
-import { IUserDto, IUserProfileDto, InputPort } from '..';
-import { CustomRecord, ID, IUser } from '../..';
+import { IIdentificationDto, IUserDto, IUserProfileDto, InputPort } from '..';
+import { CustomGeneralType, CustomRecord } from '../..';
 
 export interface UserInputPort
-  extends InputPort<'addUser' | 'getUserById' | 'changeProfileInfo' | 'deleteAccount' | 'updateUser' | 'getAllUsers'> {
-  // for internal usage
-  addUser(authenticationData: CustomRecord): Promise<IUser>;
-  // mixed
-  getUserById(id: ID): Promise<IUser>;
-  // ony for user itself
-  changeProfileInfo(id: ID, payload: IUserProfileDto): Promise<IUser>;
-  deleteAccount(id: ID): Promise<IUser>;
-  // only for administrators
-  updateUser(id: ID, payload: IUserDto): Promise<IUser>;
-  getAllUsers(): Promise<IUser[]>;
-}
+  extends InputPort<{
+    // only for administrators
+    getAllUsers: [undefined, CustomGeneralType];
+    // mixed
+    getUserById: [IIdentificationDto, CustomGeneralType];
+
+    // for internal usage
+    createUser: [CustomRecord, CustomGeneralType];
+    // only for administrators
+    updateUser: [IIdentificationDto & IUserDto, CustomGeneralType];
+    // ony for user itself
+    changeProfileInfo: [IIdentificationDto & IUserProfileDto, CustomGeneralType];
+    deleteAccount: [IIdentificationDto, CustomGeneralType];
+  }> {}

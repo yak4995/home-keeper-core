@@ -1,23 +1,15 @@
-import { ITransactionCategoryDto, InputPort } from '..';
-import { ID, ITransactionCategory } from '../..';
+import { IIdentificationDto, ITransactionCategoryDto, InputPort } from '..';
+import { CustomGeneralType, ID } from '../..';
 
 export interface TransactionCategoryInputPort
-  extends InputPort<
-    | 'getTransactionCategoryChildren'
-    | 'getCategoryDirectChildren'
-    | 'getTopCategories'
-    | 'getOwnCategories'
-    | 'searchCategory'
-    | 'addCategory'
-    | 'updateCategory'
-    | 'deleteCategory'
-  > {
-  getTransactionCategoryChildren(ownerId: ID, id: ID): Promise<ITransactionCategory[]>;
-  getCategoryDirectChildren(ownerId: ID, id: ID): Promise<ITransactionCategory[]>;
-  getTopCategories(ownerId: ID): Promise<ITransactionCategory[]>;
-  getOwnCategories(ownerId: ID): Promise<ITransactionCategory[]>;
-  searchCategory(ownerId: ID, id: ID): Promise<ITransactionCategory[]>;
-  addCategory(payload: ITransactionCategoryDto): Promise<ITransactionCategory>;
-  updateCategory(id: ID, payload: ITransactionCategoryDto): Promise<ITransactionCategory>;
-  deleteCategory(id: ID): Promise<ITransactionCategory>;
-}
+  extends InputPort<{
+    getTransactionCategoryChildren: [{ ownerId: ID } & IIdentificationDto, CustomGeneralType];
+    getCategoryDirectChildren: [{ ownerId: ID } & IIdentificationDto, CustomGeneralType];
+    getTopCategories: [{ ownerId: ID }, CustomGeneralType];
+    getOwnCategories: [{ ownerId: ID }, CustomGeneralType];
+    searchCategory: [{ ownerId: ID } & IIdentificationDto, CustomGeneralType];
+
+    createCategory: [ITransactionCategoryDto, CustomGeneralType];
+    updateCategory: [IIdentificationDto & ITransactionCategoryDto, CustomGeneralType];
+    deleteCategory: [IIdentificationDto, CustomGeneralType];
+  }> {}

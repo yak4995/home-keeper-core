@@ -1,7 +1,12 @@
-import { OutputPort, TransactionInputPort } from '../..';
+import { OutputPort } from '..';
+import { CustomGeneralType, ITransaction } from '../..';
 
 export interface TransactionOutputPort
-  extends OutputPort<
-    'getTransactionDetails' | 'getTransactions' | 'addTransaction' | 'updateTransaction' | 'deleteTransaction',
-    TransactionInputPort
-  > {}
+  extends OutputPort<{
+    getTransactionDetails: [ITransaction, CustomGeneralType];
+    getTransactions: [ITransaction[], CustomGeneralType];
+
+    createTransaction: [ITransaction, CustomGeneralType];
+    updateTransaction: [ITransaction, CustomGeneralType];
+    deleteTransaction: [ITransaction, CustomGeneralType];
+  }> {}

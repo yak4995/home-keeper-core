@@ -1,13 +1,12 @@
-import { IStockCategoryDto, InputPort } from '..';
-import { ID, IStockCategory } from '../..';
+import { IIdentificationDto, IStockCategoryDto, InputPort } from '..';
+import { CustomGeneralType } from '../..';
 
 export interface StockCategoryInputPort
-  extends InputPort<
-    'getRootCategories' | 'getCategoryChildren' | 'addStockCategory' | 'editStockCategory' | 'deleteStockCategory'
-  > {
-  getRootCategories(id: ID): Promise<IStockCategory[]>;
-  getCategoryChildren(id: ID): Promise<IStockCategory[]>;
-  addStockCategory(payload: IStockCategoryDto): Promise<IStockCategory>;
-  editStockCategory(id: ID, payload: IStockCategoryDto): Promise<IStockCategory>;
-  deleteStockCategory(id: ID): Promise<IStockCategory>;
-}
+  extends InputPort<{
+    getRootCategories: [IIdentificationDto, CustomGeneralType];
+    getCategoryChildren: [IIdentificationDto, CustomGeneralType];
+
+    createStockCategory: [IStockCategoryDto, CustomGeneralType];
+    updateStockCategory: [IIdentificationDto & IStockCategoryDto, CustomGeneralType];
+    deleteStockCategory: [IIdentificationDto, CustomGeneralType];
+  }> {}

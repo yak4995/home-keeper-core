@@ -1,15 +1,13 @@
-import { IAccountDto, InputPort } from '..';
-
-import { IUser, IAccount, ID } from '../..';
+import { IIdentificationDto, IAccountDto, InputPort } from '..';
+import { IUser, CustomGeneralType } from '../..';
 
 export interface AccountInputPort
-  extends InputPort<
-    'createAccount' | 'getAccounts' | 'getAccountDetails' | 'getBalance' | 'updateAccount' | 'deleteAccount'
-  > {
-  createAccount(user: IUser, payload: IAccountDto): Promise<IAccount>;
-  getAccounts(user: IUser): Promise<IAccount[]>;
-  getAccountDetails(id: ID): Promise<IAccount>;
-  getBalance(id: ID, at: Date): Promise<number>;
-  updateAccount(payload: IAccountDto): Promise<IAccount>;
-  deleteAccount(id: ID): Promise<IAccount>;
-}
+  extends InputPort<{
+    getAccounts: [IUser, CustomGeneralType];
+    getAccountDetails: [IIdentificationDto, CustomGeneralType];
+    getBalance: [{ at?: Date } & IIdentificationDto, CustomGeneralType];
+
+    createAccount: [{ user: IUser } & IAccountDto, CustomGeneralType];
+    updateAccount: [IIdentificationDto & IAccountDto, CustomGeneralType];
+    deleteAccount: [IIdentificationDto, CustomGeneralType];
+  }> {}

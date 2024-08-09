@@ -1,13 +1,12 @@
-import { ISubscriptionDto, InputPort } from '..';
-import { ID, ISubscription } from '../..';
+import { IIdentificationDto, ISubscriptionDto, InputPort } from '..';
+import { CustomGeneralType, ID } from '../..';
 
 export interface SubscriptionInputPort
-  extends InputPort<
-    'getSubscriptionsList' | 'getSubscriptionDetails' | 'addSubscription' | 'editSubscription' | 'deleteSubscription'
-  > {
-  getSubscriptionsList(ownerId: ID): Promise<ISubscription[]>;
-  getSubscriptionDetails(id: ID): Promise<ISubscription>;
-  addSubscription(payload: ISubscriptionDto): Promise<ISubscription>;
-  editSubscription(id: ID, payload: ISubscriptionDto): Promise<ISubscription>;
-  deleteSubscription(id: ID): Promise<ISubscription>;
-}
+  extends InputPort<{
+    getSubscriptionsList: [{ ownerId: ID }, CustomGeneralType];
+    getSubscriptionDetails: [IIdentificationDto, CustomGeneralType];
+
+    createSubscription: [ISubscriptionDto, CustomGeneralType];
+    updateSubscription: [IIdentificationDto & ISubscriptionDto, CustomGeneralType];
+    deleteSubscription: [IIdentificationDto, CustomGeneralType];
+  }> {}

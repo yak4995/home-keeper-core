@@ -1,3 +1,5 @@
-export interface CustomRecord {
-  [key: string]: undefined | number | string | boolean | null | CustomRecord | CustomRecord[];
-}
+import { CustomPrimitive } from './custom-primitive.type';
+
+export type CustomRecord = {
+  [key: string]: CustomPrimitive | CustomPrimitive[] | CustomRecord | CustomRecord[];
+};

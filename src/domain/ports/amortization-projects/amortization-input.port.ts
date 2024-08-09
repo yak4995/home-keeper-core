@@ -1,30 +1,20 @@
-import { IAmortizationDto, IMaintenanceItemDto, IConsumedResourceItemDto, InputPort } from '..';
-
-import { IHousehold, IAmortizationProject, ID, IBudget, IConsumedResourceItem, IMaintenanceItem } from '../..';
+import { IAmortizationDto, IMaintenanceItemDto, IConsumedResourceItemDto, InputPort, IIdentificationDto } from '..';
+import { IHousehold, ID, CustomGeneralType } from '../..';
 
 export interface AmortizationInputPort
-  extends InputPort<
-    | 'getAmortizations'
-    | 'getAmortizationDetails'
-    | 'addAmortization'
-    | 'editAmortization'
-    | 'addMaintenanceItem'
-    | 'editMaintenanceItem'
-    | 'deleteMaintenanceItem'
-    | 'addConsumedResourceItem'
-    | 'editConsumedResourceItem'
-    | 'deleteConsumedResourceItem'
-    | 'deleteAmortization'
-  > {
-  getAmortizations(owner: IHousehold): Promise<IAmortizationProject[]>;
-  getAmortizationDetails(id: ID): Promise<IAmortizationProject>;
-  addAmortization(payload: IAmortizationDto): Promise<IAmortizationProject>;
-  editAmortization(id: ID, payload: IAmortizationDto): Promise<IBudget>;
-  addMaintenanceItem(amortizationId: ID, payload: IMaintenanceItemDto): Promise<IMaintenanceItem>;
-  editMaintenanceItem(id: ID, payload: IMaintenanceItemDto): Promise<IMaintenanceItem>;
-  deleteMaintenanceItem(id: ID): Promise<IMaintenanceItem>;
-  addConsumedResourceItem(amortizationId: ID, payload: IConsumedResourceItemDto): Promise<IConsumedResourceItem>;
-  editConsumedResourceItem(id: ID, payload: IConsumedResourceItemDto): Promise<IConsumedResourceItem>;
-  deleteConsumedResourceItem(id: ID): Promise<IConsumedResourceItem>;
-  deleteAmortization(id: ID): Promise<IAmortizationProject>;
-}
+  extends InputPort<{
+    getAmortizations: [IHousehold, CustomGeneralType];
+    getAmortizationDetails: [IIdentificationDto, CustomGeneralType];
+
+    createAmortization: [IAmortizationDto, CustomGeneralType];
+    updateAmortization: [IIdentificationDto & IAmortizationDto, CustomGeneralType];
+    deleteAmortization: [IIdentificationDto, CustomGeneralType];
+
+    createMaintenanceItem: [{ amortizationId: ID } & IMaintenanceItemDto, CustomGeneralType];
+    updateMaintenanceItem: [IIdentificationDto & IMaintenanceItemDto, CustomGeneralType];
+    deleteMaintenanceItem: [IIdentificationDto, CustomGeneralType];
+
+    createConsumedResourceItem: [{ amortizationId: ID } & IConsumedResourceItemDto, CustomGeneralType];
+    updateConsumedResourceItem: [IIdentificationDto & IConsumedResourceItemDto, CustomGeneralType];
+    deleteConsumedResourceItem: [IIdentificationDto, CustomGeneralType];
+  }> {}

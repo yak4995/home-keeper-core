@@ -1,9 +1,10 @@
-import { IAnalyticComparisonDto, IBudgetAnalyticDto, InputPort } from '..';
+import { IBudgetAnalyticDto, InputPort } from '..';
+import { CustomGeneralType } from '../..';
 
 export interface BudgetAnalyticInputPort
-  extends InputPort<'getMaxDifference' | 'getMinDifference' | 'getBudgetsRatio' | 'getBudgetsChange'> {
-  getMaxDifference(payload: IBudgetAnalyticDto): Promise<number>;
-  getMinDifference(payload: IBudgetAnalyticDto): Promise<number>;
-  getBudgetsRatio(payload: IBudgetAnalyticDto): Promise<IAnalyticComparisonDto>;
-  getBudgetsChange(payload: IBudgetAnalyticDto): Promise<IAnalyticComparisonDto>;
-}
+  extends InputPort<{
+    getMaxDifference: [IBudgetAnalyticDto, CustomGeneralType];
+    getMinDifference: [IBudgetAnalyticDto, CustomGeneralType];
+    getBudgetsRatio: [IBudgetAnalyticDto, CustomGeneralType];
+    getBudgetsChange: [IBudgetAnalyticDto, CustomGeneralType];
+  }> {}

@@ -1,12 +1,9 @@
-import { InputPort } from './input-port.type';
+import { CustomGeneralType } from '../custom-general.type';
 
-export type OutputPort<ACTION_NAMES extends string, InputPortType extends InputPort<ACTION_NAMES>> = {
-  [MethodName in keyof InputPortType]: <
-    I extends Awaited<ReturnType<InputPortType[MethodName]>> = Awaited<ReturnType<InputPortType[MethodName]>>,
-    R = I,
-  >(
-    output: I,
-    outputTypeMapper: (arg: I) => R,
+export type OutputPort<T extends Record<string, [CustomGeneralType, CustomGeneralType]>> = {
+  [methodName in keyof T]: (
+    // output can have any subclass of T[methodName][0]
+    output: T[methodName][0] extends infer R ? R : never,
     exception: unknown,
-  ) => Promise<R>;
+  ) => Promise<T[methodName][1]>;
 };

@@ -1,9 +1,10 @@
-import { IAnalyticComparisonDto, IStockAnalyticDto, InputPort } from '..';
+import { IStockAnalyticDto, InputPort } from '..';
+import { CustomGeneralType } from '../..';
 
 export interface StockAnalyticInputPort
-  extends InputPort<'getStockTransactionsCount' | 'getStockTransactionsSum' | 'getStockRatio' | 'getStockChange'> {
-  getStockTransactionsCount(payload: IStockAnalyticDto): Promise<number>;
-  getStockTransactionsSum(payload: IStockAnalyticDto): Promise<number>;
-  getStockRatio(payload: IStockAnalyticDto): Promise<IAnalyticComparisonDto>;
-  getStockChange(payload: IStockAnalyticDto): Promise<IAnalyticComparisonDto>;
-}
+  extends InputPort<{
+    getStockTransactionsCount: [IStockAnalyticDto, CustomGeneralType];
+    getStockTransactionsSum: [IStockAnalyticDto, CustomGeneralType];
+    getStockRatio: [IStockAnalyticDto, CustomGeneralType];
+    getStockChange: [IStockAnalyticDto, CustomGeneralType];
+  }> {}

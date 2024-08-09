@@ -1,10 +1,12 @@
-import { ITaxDto, InputPort } from '..';
-import { ID, ITax } from '../..';
+import { IIdentificationDto, ITaxDto, InputPort } from '..';
+import { CustomGeneralType, ID } from '../..';
 
-export interface TaxInputPort extends InputPort<'getTaxesList' | 'getTaxDetail' | 'addTax' | 'editTax' | 'deleteTax'> {
-  getTaxesList(ownerId: ID): Promise<ITax[]>;
-  getTaxDetail(id: ID): Promise<ITax>;
-  addTax(payload: ITaxDto): Promise<ITax>;
-  editTax(id: ID, payload: ITaxDto): Promise<ITax>;
-  deleteTax(id: ID): Promise<ITax>;
-}
+export interface TaxInputPort
+  extends InputPort<{
+    getTaxesList: [{ ownerId: ID }, CustomGeneralType];
+    getTaxDetail: [IIdentificationDto, CustomGeneralType];
+
+    createTax: [ITaxDto, CustomGeneralType];
+    updateTax: [IIdentificationDto & ITaxDto, CustomGeneralType];
+    deleteTax: [IIdentificationDto, CustomGeneralType];
+  }> {}

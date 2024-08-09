@@ -1,22 +1,14 @@
-import { IAnalyticComparisonDto, ITransactionAnalyticDto, InputPort } from '..';
+import { ITransactionAnalyticDto, InputPort } from '..';
+import { CustomGeneralType } from '../..';
 
 export interface TransactionAnalyticInputPort
-  extends InputPort<
-    | 'getMaxTransaction'
-    | 'getMinTransaction'
-    | 'getTransactionsCount'
-    | 'getTransactionsSum'
-    | 'getTransactionsAverage'
-    | 'getTransactionsMedian'
-    | 'getTransactionsRatio'
-    | 'getTransactionsChange'
-  > {
-  getMaxTransaction(payload: ITransactionAnalyticDto): Promise<number>;
-  getMinTransaction(payload: ITransactionAnalyticDto): Promise<number>;
-  getTransactionsCount(payload: ITransactionAnalyticDto): Promise<number>;
-  getTransactionsSum(payload: ITransactionAnalyticDto): Promise<number>;
-  getTransactionsAverage(payload: ITransactionAnalyticDto): Promise<number>;
-  getTransactionsMedian(payload: ITransactionAnalyticDto): Promise<number>;
-  getTransactionsRatio(payload: ITransactionAnalyticDto): Promise<IAnalyticComparisonDto>;
-  getTransactionsChange(payload: ITransactionAnalyticDto): Promise<IAnalyticComparisonDto>;
-}
+  extends InputPort<{
+    getMaxTransaction: [ITransactionAnalyticDto, CustomGeneralType];
+    getMinTransaction: [ITransactionAnalyticDto, CustomGeneralType];
+    getTransactionsCount: [ITransactionAnalyticDto, CustomGeneralType];
+    getTransactionsSum: [ITransactionAnalyticDto, CustomGeneralType];
+    getTransactionsAverage: [ITransactionAnalyticDto, CustomGeneralType];
+    getTransactionsMedian: [ITransactionAnalyticDto, CustomGeneralType];
+    getTransactionsRatio: [ITransactionAnalyticDto, CustomGeneralType];
+    getTransactionsChange: [ITransactionAnalyticDto, CustomGeneralType];
+  }> {}

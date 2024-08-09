@@ -1,7 +1,12 @@
-import { OutputPort, StockCategoryInputPort } from '../..';
+import { OutputPort } from '..';
+import { CustomGeneralType, IStockCategory } from '../..';
 
 export interface StockCategoryOutputPort
-  extends OutputPort<
-    'getRootCategories' | 'getCategoryChildren' | 'addStockCategory' | 'editStockCategory' | 'deleteStockCategory',
-    StockCategoryInputPort
-  > {}
+  extends OutputPort<{
+    getRootCategories: [IStockCategory[], CustomGeneralType];
+    getCategoryChildren: [IStockCategory[], CustomGeneralType];
+
+    createStockCategory: [IStockCategory, CustomGeneralType];
+    updateStockCategory: [IStockCategory, CustomGeneralType];
+    deleteStockCategory: [IStockCategory, CustomGeneralType];
+  }> {}

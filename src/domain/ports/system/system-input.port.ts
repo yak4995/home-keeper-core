@@ -1,31 +1,20 @@
-import { ICurrencyDto, ILangDto, ITzDto, InputPort } from '..';
-import { ICurrency, ID, ILanguage, ITimezone } from '../..';
+import { ICurrencyDto, IIdentificationDto, ILangDto, ITzDto, InputPort } from '..';
+import { CustomGeneralType } from '../..';
 
 export interface SystemInputPort
-  extends InputPort<
-    | 'getAllCurrencies'
-    | 'getCurrencyById'
-    | 'createCurrency'
-    | 'updateCurrency'
-    | 'getAllLanguages'
-    | 'getLangById'
-    | 'createLanguage'
-    | 'updateLanguage'
-    | 'getAllTimezones'
-    | 'getTzById'
-    | 'createTimezone'
-    | 'updateTimezone'
-  > {
-  getAllCurrencies(): Promise<ICurrency[]>;
-  getCurrencyById(id: ID): Promise<ICurrency>;
-  createCurrency(payload: ICurrencyDto): Promise<ICurrency>;
-  updateCurrency(id: ID, payload: ICurrencyDto): Promise<ICurrency>;
-  getAllLanguages(): Promise<ILanguage[]>;
-  getLangById(id: ID): Promise<ILanguage>;
-  createLanguage(payload: ILangDto): Promise<ILanguage>;
-  updateLanguage(id: ID, payload: ILangDto): Promise<ILanguage>;
-  getAllTimezones(): Promise<ITimezone[]>;
-  getTzById(id: ID): Promise<ITimezone>;
-  createTimezone(payload: ITzDto): Promise<ITimezone>;
-  updateTimezone(id: ID, payload: ITzDto): Promise<ITimezone>;
-}
+  extends InputPort<{
+    getAllCurrencies: [undefined, CustomGeneralType];
+    getCurrencyById: [IIdentificationDto, CustomGeneralType];
+    createCurrency: [ICurrencyDto, CustomGeneralType];
+    updateCurrency: [IIdentificationDto & ICurrencyDto, CustomGeneralType];
+
+    getAllLanguages: [undefined, CustomGeneralType];
+    getLangById: [IIdentificationDto, CustomGeneralType];
+    createLanguage: [ILangDto, CustomGeneralType];
+    updateLanguage: [IIdentificationDto & ILangDto, CustomGeneralType];
+
+    getAllTimezones: [undefined, CustomGeneralType];
+    getTzById: [IIdentificationDto, CustomGeneralType];
+    createTimezone: [ITzDto, CustomGeneralType];
+    updateTimezone: [IIdentificationDto & ITzDto, CustomGeneralType];
+  }> {}
