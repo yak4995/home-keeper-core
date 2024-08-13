@@ -5,6 +5,7 @@ export * from './system/language-creator.interface';
 export * from './system/timezone-creator.interface';
 
 export * from './users/user-creator.interface';
+export * from './users/web-user-creator.interface';
 
 export * from './household/household-creator.interface';
 export * from './household/household-invitation-creator.interface';

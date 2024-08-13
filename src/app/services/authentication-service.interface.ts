@@ -1,5 +1,6 @@
 import { CustomRecord, IUser } from '../..';
 
+// not usable for now
 export interface IAuthenticationService<T extends IUser> {
   signUp(authenticationData: CustomRecord): Promise<Partial<T>>;
   signIn(authenticationData: CustomRecord): Promise<IUser>;
