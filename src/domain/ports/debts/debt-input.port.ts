@@ -1,12 +1,12 @@
 import { IDebtDto, IIdentificationDto, InputPort } from '..';
-import { CustomGeneralType, IHousehold } from '../..';
+import { IHousehold } from '../..';
 
 export interface DebtInputPort
   extends InputPort<{
-    getDebtsList: [IHousehold, CustomGeneralType];
-    getDebtDetails: [IIdentificationDto, CustomGeneralType];
+    getDebtsList: [IHousehold, object];
+    getDebtDetails: [IIdentificationDto, object];
 
-    createDebt: [IDebtDto, CustomGeneralType];
-    updateDebt: [IIdentificationDto & IDebtDto, CustomGeneralType];
-    deleteDebt: [IIdentificationDto, CustomGeneralType];
+    createDebt: [IDebtDto, object];
+    updateDebt: [IIdentificationDto & IDebtDto, object];
+    deleteDebt: [IIdentificationDto, object];
   }> {}

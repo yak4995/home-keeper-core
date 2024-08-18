@@ -1,12 +1,12 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, IStockItem } from '../..';
+import { IStockItem } from '../..';
 
 export interface StockItemOutputPort
   extends OutputPort<{
-    getStockItemsList: [IStockItem[], CustomGeneralType];
-    getStockItemsDetails: [IStockItem, CustomGeneralType];
+    getStockItemsList: [IStockItem[], object];
+    getStockItemsDetails: [IStockItem, object];
 
-    createStockItem: [IStockItem, CustomGeneralType];
-    updateStockItem: [IStockItem, CustomGeneralType];
-    deleteStockItem: [IStockItem, CustomGeneralType];
+    createStockItem: [IStockItem, object];
+    updateStockItem: [IStockItem, object];
+    deleteStockItem: [IStockItem, object];
   }> {}

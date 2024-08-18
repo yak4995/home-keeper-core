@@ -1,10 +1,10 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, IReportDefinition } from '../..';
+import { IReportDefinition } from '../..';
 
 export interface ReportOutputPort
   extends OutputPort<{
-    subscribe: [IReportDefinition[], CustomGeneralType];
-    unsubscribe: [IReportDefinition[], CustomGeneralType];
-    getSubscriptions: [IReportDefinition[], CustomGeneralType];
-    generateReport: [CustomGeneralType, CustomGeneralType];
+    subscribe: [IReportDefinition[], object];
+    unsubscribe: [IReportDefinition[], object];
+    getSubscriptions: [IReportDefinition[], object];
+    generateReport: [object, object];
   }> {}

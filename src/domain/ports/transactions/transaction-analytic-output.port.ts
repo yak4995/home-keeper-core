@@ -1,14 +1,13 @@
 import { IAnalyticComparisonDto, OutputPort } from '..';
-import { CustomGeneralType } from '../..';
 
 export interface TransactionAnalyticOutputPort
   extends OutputPort<{
-    getMaxTransaction: [number, CustomGeneralType];
-    getMinTransaction: [number, CustomGeneralType];
-    getTransactionsCount: [number, CustomGeneralType];
-    getTransactionsSum: [number, CustomGeneralType];
-    getTransactionsAverage: [number, CustomGeneralType];
-    getTransactionsMedian: [number, CustomGeneralType];
-    getTransactionsRatio: [IAnalyticComparisonDto, CustomGeneralType];
-    getTransactionsChange: [IAnalyticComparisonDto, CustomGeneralType];
+    getMaxTransaction: [{ result: number }, object];
+    getMinTransaction: [{ result: number }, object];
+    getTransactionsCount: [{ result: number }, object];
+    getTransactionsSum: [{ result: number }, object];
+    getTransactionsAverage: [{ result: number }, object];
+    getTransactionsMedian: [{ result: number }, object];
+    getTransactionsRatio: [IAnalyticComparisonDto, object];
+    getTransactionsChange: [IAnalyticComparisonDto, object];
   }> {}

@@ -1,9 +1,9 @@
 import { IIdentificationDto, ITransactionDto, ITransactionFilterDto, InputPort } from '..';
-import { CustomGeneralType, ITransaction, OrderCriteria } from '../..';
+import { ITransaction, OrderCriteria } from '../..';
 
 export interface TransactionInputPort
   extends InputPort<{
-    getTransactionDetails: [IIdentificationDto, CustomGeneralType];
+    getTransactionDetails: [IIdentificationDto, object];
     getTransactions: [
       {
         page: number;
@@ -11,10 +11,10 @@ export interface TransactionInputPort
         sort: OrderCriteria<ITransaction>;
         filter: ITransactionFilterDto;
       },
-      CustomGeneralType,
+      object,
     ];
 
-    createTransaction: [ITransactionDto, CustomGeneralType];
-    updateTransaction: [IIdentificationDto & ITransactionDto, CustomGeneralType];
-    deleteTransaction: [IIdentificationDto, CustomGeneralType];
+    createTransaction: [ITransactionDto, object];
+    updateTransaction: [IIdentificationDto & ITransactionDto, object];
+    deleteTransaction: [IIdentificationDto, object];
   }> {}

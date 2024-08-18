@@ -1,15 +1,15 @@
 import { IIdentificationDto, ITransactionCategoryDto, InputPort } from '..';
-import { CustomGeneralType, ID } from '../..';
+import { ID } from '../..';
 
 export interface TransactionCategoryInputPort
   extends InputPort<{
-    getTransactionCategoryChildren: [{ ownerId: ID } & IIdentificationDto, CustomGeneralType];
-    getCategoryDirectChildren: [{ ownerId: ID } & IIdentificationDto, CustomGeneralType];
-    getTopCategories: [{ ownerId: ID }, CustomGeneralType];
-    getOwnCategories: [{ ownerId: ID }, CustomGeneralType];
-    searchCategory: [{ ownerId: ID } & IIdentificationDto, CustomGeneralType];
+    getTransactionCategoryChildren: [{ ownerId: ID } & IIdentificationDto, object];
+    getCategoryDirectChildren: [{ ownerId: ID } & IIdentificationDto, object];
+    getTopCategories: [{ ownerId: ID }, object];
+    getOwnCategories: [{ ownerId: ID }, object];
+    searchCategory: [{ ownerId: ID } & IIdentificationDto, object];
 
-    createCategory: [ITransactionCategoryDto, CustomGeneralType];
-    updateCategory: [IIdentificationDto & ITransactionCategoryDto, CustomGeneralType];
-    deleteCategory: [IIdentificationDto, CustomGeneralType];
+    createCategory: [ITransactionCategoryDto, object];
+    updateCategory: [IIdentificationDto & ITransactionCategoryDto, object];
+    deleteCategory: [IIdentificationDto, object];
   }> {}

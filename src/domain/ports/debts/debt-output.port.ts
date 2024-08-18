@@ -1,12 +1,12 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, IDebt } from '../..';
+import { IDebt } from '../..';
 
 export interface DebtOutputPort
   extends OutputPort<{
-    getDebtsList: [IDebt[], CustomGeneralType];
-    getDebtDetails: [IDebt, CustomGeneralType];
+    getDebtsList: [IDebt[], object];
+    getDebtDetails: [IDebt, object];
 
-    createDebt: [IDebt, CustomGeneralType];
-    updateDebt: [IDebt, CustomGeneralType];
-    deleteDebt: [IDebt, CustomGeneralType];
+    createDebt: [IDebt, object];
+    updateDebt: [IDebt, object];
+    deleteDebt: [IDebt, object];
   }> {}

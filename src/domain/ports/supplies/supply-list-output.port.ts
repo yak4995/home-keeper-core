@@ -1,12 +1,12 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, ISupplyList, ISupplyListItem } from '../..';
+import { ISupplyList, ISupplyListItem } from '../..';
 
 export interface SupplyListOutputPort
   extends OutputPort<{
-    getSupplyLists: [ISupplyList[], CustomGeneralType];
-    getSupplyListDetails: [ISupplyList, CustomGeneralType];
+    getSupplyLists: [ISupplyList[], object];
+    getSupplyListDetails: [ISupplyList, object];
 
-    createSupplyListItem: [ISupplyListItem, CustomGeneralType];
-    updateSupplyListItem: [ISupplyListItem, CustomGeneralType];
-    deleteSupplyListItem: [ISupplyListItem, CustomGeneralType];
+    createSupplyListItem: [ISupplyListItem, object];
+    updateSupplyListItem: [ISupplyListItem, object];
+    deleteSupplyListItem: [ISupplyListItem, object];
   }> {}

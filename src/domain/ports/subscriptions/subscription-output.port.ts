@@ -1,12 +1,12 @@
 import { OutputPort } from '..';
-import { ISubscription, CustomGeneralType } from '../..';
+import { ISubscription } from '../..';
 
 export interface SubscriptionOutputPort
   extends OutputPort<{
-    getSubscriptionsList: [ISubscription[], CustomGeneralType];
-    getSubscriptionDetails: [ISubscription, CustomGeneralType];
+    getSubscriptionsList: [ISubscription[], object];
+    getSubscriptionDetails: [ISubscription, object];
 
-    createSubscription: [ISubscription, CustomGeneralType];
-    updateSubscription: [ISubscription, CustomGeneralType];
-    deleteSubscription: [ISubscription, CustomGeneralType];
+    createSubscription: [ISubscription, object];
+    updateSubscription: [ISubscription, object];
+    deleteSubscription: [ISubscription, object];
   }> {}

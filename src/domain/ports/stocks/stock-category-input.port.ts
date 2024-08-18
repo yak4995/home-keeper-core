@@ -1,12 +1,11 @@
 import { IIdentificationDto, IStockCategoryDto, InputPort } from '..';
-import { CustomGeneralType } from '../..';
 
 export interface StockCategoryInputPort
   extends InputPort<{
-    getRootCategories: [IIdentificationDto, CustomGeneralType];
-    getCategoryChildren: [IIdentificationDto, CustomGeneralType];
+    getRootCategories: [IIdentificationDto, object];
+    getCategoryChildren: [IIdentificationDto, object];
 
-    createStockCategory: [IStockCategoryDto, CustomGeneralType];
-    updateStockCategory: [IIdentificationDto & IStockCategoryDto, CustomGeneralType];
-    deleteStockCategory: [IIdentificationDto, CustomGeneralType];
+    createStockCategory: [IStockCategoryDto, object];
+    updateStockCategory: [IIdentificationDto & IStockCategoryDto, object];
+    deleteStockCategory: [IIdentificationDto, object];
   }> {}

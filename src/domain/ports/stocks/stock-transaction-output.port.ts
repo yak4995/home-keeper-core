@@ -1,12 +1,12 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, IStockTransaction } from '../..';
+import { IStockTransaction } from '../..';
 
 export interface StockTransactionOutputPort
   extends OutputPort<{
-    getStockTransactionsList: [IStockTransaction[], CustomGeneralType];
-    getStockTransactionDetails: [IStockTransaction, CustomGeneralType];
+    getStockTransactionsList: [IStockTransaction[], object];
+    getStockTransactionDetails: [IStockTransaction, object];
 
-    createStockTransaction: [IStockTransaction, CustomGeneralType];
-    updateStockTransaction: [IStockTransaction, CustomGeneralType];
-    deleteStockTransaction: [IStockTransaction, CustomGeneralType];
+    createStockTransaction: [IStockTransaction, object];
+    updateStockTransaction: [IStockTransaction, object];
+    deleteStockTransaction: [IStockTransaction, object];
   }> {}

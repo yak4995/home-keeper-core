@@ -1,25 +1,25 @@
 import { InputPort } from '..';
-import { CustomGeneralType, ID, IIdentificationDto } from '../..';
+import { ID, IIdentificationDto } from '../..';
 
 export interface HouseholdInputPort
   extends InputPort<{
     // from household member:
-    getSentInvitations: [IIdentificationDto, CustomGeneralType];
-    createInvitation: [{ userId: ID } & IIdentificationDto, CustomGeneralType];
-    deleteInvitation: [IIdentificationDto, CustomGeneralType];
+    getSentInvitations: [IIdentificationDto, object];
+    createInvitation: [{ userId: ID } & IIdentificationDto, object];
+    deleteInvitation: [IIdentificationDto, object];
 
-    getUserHouseholds: [{ memberId: ID }, CustomGeneralType];
-    getHousehold: [IIdentificationDto, CustomGeneralType];
+    getUserHouseholds: [{ memberId: ID }, object];
+    getHousehold: [IIdentificationDto, object];
 
-    createHousehold: [{ memberId: ID; name: string }, CustomGeneralType];
-    updateHousehold: [{ name: string } & IIdentificationDto, CustomGeneralType];
-    leave: [{ userId: ID } & IIdentificationDto, CustomGeneralType];
+    createHousehold: [{ memberId: ID; name: string }, object];
+    updateHousehold: [{ name: string } & IIdentificationDto, object];
+    leave: [{ userId: ID } & IIdentificationDto, object];
 
     // from external user:
-    getInvitations: [{ userId: ID }, CustomGeneralType];
-    accept: [{ userId: ID } & IIdentificationDto, CustomGeneralType];
-    reject: [{ userId: ID } & IIdentificationDto, CustomGeneralType];
+    getInvitations: [{ userId: ID }, object];
+    accept: [{ userId: ID } & IIdentificationDto, object];
+    reject: [{ userId: ID } & IIdentificationDto, object];
 
     // from system:
-    deleteHousehold: [IIdentificationDto, CustomGeneralType];
+    deleteHousehold: [IIdentificationDto, object];
   }> {}

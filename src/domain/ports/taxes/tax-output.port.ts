@@ -1,12 +1,12 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, ITax } from '../..';
+import { ITax } from '../..';
 
 export interface TaxOutputPort
   extends OutputPort<{
-    getTaxesList: [ITax[], CustomGeneralType];
-    getTaxDetail: [ITax, CustomGeneralType];
+    getTaxesList: [ITax[], object];
+    getTaxDetail: [ITax, object];
 
-    createTax: [ITax, CustomGeneralType];
-    updateTax: [ITax, CustomGeneralType];
-    deleteTax: [ITax, CustomGeneralType];
+    createTax: [ITax, object];
+    updateTax: [ITax, object];
+    deleteTax: [ITax, object];
   }> {}

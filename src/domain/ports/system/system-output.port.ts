@@ -1,20 +1,20 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, ICurrency, ILanguage, ITimezone } from '../..';
+import { ICurrency, ILanguage, ITimezone } from '../..';
 
 export interface SystemOutputPort
   extends OutputPort<{
-    getAllCurrencies: [ICurrency[], CustomGeneralType];
-    getCurrencyById: [ICurrency, CustomGeneralType];
-    createCurrency: [ICurrency, CustomGeneralType];
-    updateCurrency: [ICurrency, CustomGeneralType];
+    getAllCurrencies: [ICurrency[], object];
+    getCurrencyById: [ICurrency, object];
+    createCurrency: [ICurrency, object];
+    updateCurrency: [ICurrency, object];
 
-    getAllLanguages: [ILanguage[], CustomGeneralType];
-    getLangById: [ILanguage, CustomGeneralType];
-    createLanguage: [ILanguage, CustomGeneralType];
-    updateLanguage: [ILanguage, CustomGeneralType];
+    getAllLanguages: [ILanguage[], object];
+    getLangById: [ILanguage, object];
+    createLanguage: [ILanguage, object];
+    updateLanguage: [ILanguage, object];
 
-    getAllTimezones: [ITimezone[], CustomGeneralType];
-    getTzById: [ITimezone, CustomGeneralType];
-    createTimezone: [ITimezone, CustomGeneralType];
-    updateTimezone: [ITimezone, CustomGeneralType];
+    getAllTimezones: [ITimezone[], object];
+    getTzById: [ITimezone, object];
+    createTimezone: [ITimezone, object];
+    updateTimezone: [ITimezone, object];
   }> {}

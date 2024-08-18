@@ -1,18 +1,18 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, IUser } from '../..';
+import { IUser } from '../..';
 
 export interface UserOutputPort
   extends OutputPort<{
     // only for administrators
-    getAllUsers: [IUser[], CustomGeneralType];
+    getAllUsers: [IUser[], object];
     // mixed
-    getUserById: [IUser, CustomGeneralType];
+    getUserById: [IUser, object];
 
     // for internal usage
-    createUser: [IUser, CustomGeneralType];
+    createUser: [IUser, object];
     // only for administrators
-    updateUser: [IUser, CustomGeneralType];
+    updateUser: [IUser, object];
     // ony for user itself
-    changeProfileInfo: [IUser, CustomGeneralType];
-    deleteAccount: [IUser, CustomGeneralType];
+    changeProfileInfo: [IUser, object];
+    deleteAccount: [IUser, object];
   }> {}

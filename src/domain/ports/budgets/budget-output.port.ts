@@ -1,16 +1,16 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, IBudget, IBudgetItem } from '../..';
+import { IBudget, IBudgetItem } from '../..';
 
 export interface BudgetOutputPort
   extends OutputPort<{
-    getBudgets: [IBudget[], CustomGeneralType];
-    getBudgetDetails: [IBudget, CustomGeneralType];
+    getBudgets: [IBudget[], object];
+    getBudgetDetails: [IBudget, object];
 
-    createBudget: [IBudget, CustomGeneralType];
-    updateBudget: [IBudget, CustomGeneralType];
-    deleteBudget: [IBudget, CustomGeneralType];
+    createBudget: [IBudget, object];
+    updateBudget: [IBudget, object];
+    deleteBudget: [IBudget, object];
 
-    createBudgetItem: [IBudgetItem, CustomGeneralType];
-    updateBudgetItem: [IBudgetItem, CustomGeneralType];
-    deleteBudgetItem: [IBudgetItem, CustomGeneralType];
+    createBudgetItem: [IBudgetItem, object];
+    updateBudgetItem: [IBudgetItem, object];
+    deleteBudgetItem: [IBudgetItem, object];
   }> {}

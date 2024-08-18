@@ -1,18 +1,18 @@
 import { IIdentificationDto, IUserDto, IUserProfileDto, InputPort } from '..';
-import { CustomGeneralType, CustomRecord } from '../..';
+import { CustomRecord } from '../..';
 
 export interface UserInputPort
   extends InputPort<{
     // only for administrators
-    getAllUsers: [undefined, CustomGeneralType];
+    getAllUsers: [undefined, object];
     // mixed
-    getUserById: [IIdentificationDto, CustomGeneralType];
+    getUserById: [IIdentificationDto, object];
 
     // for internal usage
-    createUser: [CustomRecord, CustomGeneralType];
+    createUser: [CustomRecord, object];
     // only for administrators
-    updateUser: [IIdentificationDto & IUserDto, CustomGeneralType];
+    updateUser: [IIdentificationDto & IUserDto, object];
     // ony for user itself
-    changeProfileInfo: [IIdentificationDto & IUserProfileDto, CustomGeneralType];
-    deleteAccount: [IIdentificationDto, CustomGeneralType];
+    changeProfileInfo: [IIdentificationDto & IUserProfileDto, object];
+    deleteAccount: [IIdentificationDto, object];
   }> {}

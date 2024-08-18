@@ -1,16 +1,16 @@
 import { IEstimationDto, IEstimationItemDto, IIdentificationDto, InputPort } from '..';
-import { CustomGeneralType, ID, IHousehold } from '../..';
+import { ID, IHousehold } from '../..';
 
 export interface EstimationInputPort
   extends InputPort<{
-    getEstimations: [{ owner: IHousehold; from: Date; to: Date }, CustomGeneralType];
-    getEstimationDetails: [IIdentificationDto, CustomGeneralType];
+    getEstimations: [{ owner: IHousehold; from: Date; to: Date }, object];
+    getEstimationDetails: [IIdentificationDto, object];
 
-    createEstimation: [IEstimationDto, CustomGeneralType];
-    updateEstimation: [IIdentificationDto & IEstimationDto, CustomGeneralType];
-    deleteEstimation: [IIdentificationDto, CustomGeneralType];
+    createEstimation: [IEstimationDto, object];
+    updateEstimation: [IIdentificationDto & IEstimationDto, object];
+    deleteEstimation: [IIdentificationDto, object];
 
-    createEstimationItem: [{ estimationId: ID } & IEstimationItemDto, CustomGeneralType];
-    updateEstimationItem: [IIdentificationDto & IEstimationItemDto, CustomGeneralType];
-    deleteEstimationItem: [IIdentificationDto, CustomGeneralType];
+    createEstimationItem: [{ estimationId: ID } & IEstimationItemDto, object];
+    updateEstimationItem: [IIdentificationDto & IEstimationItemDto, object];
+    deleteEstimationItem: [IIdentificationDto, object];
   }> {}

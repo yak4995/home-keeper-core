@@ -1,12 +1,12 @@
 import { IIdentificationDto, ISupplyListItemDto, InputPort } from '..';
-import { CustomGeneralType, ID } from '../..';
+import { ID } from '../..';
 
 export interface SupplyListInputPort
   extends InputPort<{
-    getSupplyLists: [{ ownerID: ID }, CustomGeneralType];
-    getSupplyListDetails: [IIdentificationDto, CustomGeneralType];
+    getSupplyLists: [{ ownerID: ID }, object];
+    getSupplyListDetails: [IIdentificationDto, object];
 
-    createSupplyListItem: [ISupplyListItemDto, CustomGeneralType];
-    updateSupplyListItem: [IIdentificationDto & ISupplyListItemDto, CustomGeneralType];
-    deleteSupplyListItem: [IIdentificationDto, CustomGeneralType];
+    createSupplyListItem: [ISupplyListItemDto, object];
+    updateSupplyListItem: [IIdentificationDto & ISupplyListItemDto, object];
+    deleteSupplyListItem: [IIdentificationDto, object];
   }> {}

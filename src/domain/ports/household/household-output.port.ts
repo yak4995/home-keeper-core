@@ -1,25 +1,25 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, IHousehold, IHouseholdInvitation } from '../..';
+import { IHousehold, IHouseholdInvitation } from '../..';
 
 export interface HouseholdOutputPort
   extends OutputPort<{
     // from household member
-    getSentInvitations: [IHouseholdInvitation[], CustomGeneralType];
-    createInvitation: [boolean, CustomGeneralType];
-    deleteInvitation: [IHouseholdInvitation, CustomGeneralType];
+    getSentInvitations: [IHouseholdInvitation[], object];
+    createInvitation: [{ result: boolean }, object];
+    deleteInvitation: [IHouseholdInvitation, object];
 
-    getUserHouseholds: [IHousehold[], CustomGeneralType];
-    getHousehold: [IHousehold, CustomGeneralType];
+    getUserHouseholds: [IHousehold[], object];
+    getHousehold: [IHousehold, object];
 
-    createHousehold: [IHousehold, CustomGeneralType];
-    updateHousehold: [boolean, CustomGeneralType];
-    leave: [boolean, CustomGeneralType];
+    createHousehold: [IHousehold, object];
+    updateHousehold: [{ result: boolean }, object];
+    leave: [{ result: boolean }, object];
 
     // from external user
-    getInvitations: [string[], CustomGeneralType];
-    accept: [boolean, CustomGeneralType];
-    reject: [boolean, CustomGeneralType];
+    getInvitations: [string[], object];
+    accept: [{ result: boolean }, object];
+    reject: [{ result: boolean }, object];
 
     // from system
-    deleteHousehold: [boolean, CustomGeneralType];
+    deleteHousehold: [{ result: boolean }, object];
   }> {}

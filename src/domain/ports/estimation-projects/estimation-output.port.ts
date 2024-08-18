@@ -1,16 +1,16 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, IEstimationProject, IEstimationProjectItem } from '../..';
+import { IEstimationProject, IEstimationProjectItem } from '../..';
 
 export interface EstimationOutputPort
   extends OutputPort<{
-    getEstimations: [IEstimationProject[], CustomGeneralType];
-    getEstimationDetails: [IEstimationProject, CustomGeneralType];
+    getEstimations: [IEstimationProject[], object];
+    getEstimationDetails: [IEstimationProject, object];
 
-    createEstimation: [IEstimationProject, CustomGeneralType];
-    updateEstimation: [IEstimationProject, CustomGeneralType];
-    deleteEstimation: [IEstimationProject, CustomGeneralType];
+    createEstimation: [IEstimationProject, object];
+    updateEstimation: [IEstimationProject, object];
+    deleteEstimation: [IEstimationProject, object];
 
-    createEstimationItem: [IEstimationProjectItem, CustomGeneralType];
-    updateEstimationItem: [IEstimationProjectItem, CustomGeneralType];
-    deleteEstimationItem: [IEstimationProjectItem, CustomGeneralType];
+    createEstimationItem: [IEstimationProjectItem, object];
+    updateEstimationItem: [IEstimationProjectItem, object];
+    deleteEstimationItem: [IEstimationProjectItem, object];
   }> {}

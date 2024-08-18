@@ -1,13 +1,13 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, IAccount } from '../..';
+import { IAccount } from '../..';
 
 export interface AccountOutputPort
   extends OutputPort<{
-    getAccounts: [IAccount[], CustomGeneralType];
-    getAccountDetails: [IAccount, CustomGeneralType];
-    getBalance: [number, CustomGeneralType];
+    getAccounts: [IAccount[], object];
+    getAccountDetails: [IAccount, object];
+    getBalance: [{ result: number }, object];
 
-    createAccount: [IAccount, CustomGeneralType];
-    updateAccount: [IAccount, CustomGeneralType];
-    deleteAccount: [IAccount, CustomGeneralType];
+    createAccount: [IAccount, object];
+    updateAccount: [IAccount, object];
+    deleteAccount: [IAccount, object];
   }> {}

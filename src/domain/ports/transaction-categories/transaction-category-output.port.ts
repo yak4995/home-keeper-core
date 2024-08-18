@@ -1,15 +1,15 @@
 import { OutputPort } from '..';
-import { CustomGeneralType, ITransactionCategory } from '../..';
+import { ITransactionCategory } from '../..';
 
 export interface TransactionCategoryOutputPort
   extends OutputPort<{
-    getTransactionCategoryChildren: [ITransactionCategory[], CustomGeneralType];
-    getCategoryDirectChildren: [ITransactionCategory[], CustomGeneralType];
-    getTopCategories: [ITransactionCategory[], CustomGeneralType];
-    getOwnCategories: [ITransactionCategory[], CustomGeneralType];
-    searchCategory: [ITransactionCategory[], CustomGeneralType];
+    getTransactionCategoryChildren: [ITransactionCategory[], object];
+    getCategoryDirectChildren: [ITransactionCategory[], object];
+    getTopCategories: [ITransactionCategory[], object];
+    getOwnCategories: [ITransactionCategory[], object];
+    searchCategory: [ITransactionCategory[], object];
 
-    createCategory: [ITransactionCategory, CustomGeneralType];
-    updateCategory: [ITransactionCategory, CustomGeneralType];
-    deleteCategory: [ITransactionCategory, CustomGeneralType];
+    createCategory: [ITransactionCategory, object];
+    updateCategory: [ITransactionCategory, object];
+    deleteCategory: [ITransactionCategory, object];
   }> {}

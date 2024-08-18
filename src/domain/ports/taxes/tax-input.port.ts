@@ -1,12 +1,12 @@
 import { IIdentificationDto, ITaxDto, InputPort } from '..';
-import { CustomGeneralType, ID } from '../..';
+import { ID } from '../..';
 
 export interface TaxInputPort
   extends InputPort<{
-    getTaxesList: [{ ownerId: ID }, CustomGeneralType];
-    getTaxDetail: [IIdentificationDto, CustomGeneralType];
+    getTaxesList: [{ ownerId: ID }, object];
+    getTaxDetail: [IIdentificationDto, object];
 
-    createTax: [ITaxDto, CustomGeneralType];
-    updateTax: [IIdentificationDto & ITaxDto, CustomGeneralType];
-    deleteTax: [IIdentificationDto, CustomGeneralType];
+    createTax: [ITaxDto, object];
+    updateTax: [IIdentificationDto & ITaxDto, object];
+    deleteTax: [IIdentificationDto, object];
   }> {}

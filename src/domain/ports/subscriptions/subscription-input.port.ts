@@ -1,12 +1,12 @@
 import { IIdentificationDto, ISubscriptionDto, InputPort } from '..';
-import { CustomGeneralType, ID } from '../..';
+import { ID } from '../..';
 
 export interface SubscriptionInputPort
   extends InputPort<{
-    getSubscriptionsList: [{ ownerId: ID }, CustomGeneralType];
-    getSubscriptionDetails: [IIdentificationDto, CustomGeneralType];
+    getSubscriptionsList: [{ ownerId: ID }, object];
+    getSubscriptionDetails: [IIdentificationDto, object];
 
-    createSubscription: [ISubscriptionDto, CustomGeneralType];
-    updateSubscription: [IIdentificationDto & ISubscriptionDto, CustomGeneralType];
-    deleteSubscription: [IIdentificationDto, CustomGeneralType];
+    createSubscription: [ISubscriptionDto, object];
+    updateSubscription: [IIdentificationDto & ISubscriptionDto, object];
+    deleteSubscription: [IIdentificationDto, object];
   }> {}

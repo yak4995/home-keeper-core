@@ -1,20 +1,19 @@
 import { ICurrencyDto, IIdentificationDto, ILangDto, ITzDto, InputPort } from '..';
-import { CustomGeneralType } from '../..';
 
 export interface SystemInputPort
   extends InputPort<{
-    getAllCurrencies: [undefined, CustomGeneralType];
-    getCurrencyById: [IIdentificationDto, CustomGeneralType];
-    createCurrency: [ICurrencyDto, CustomGeneralType];
-    updateCurrency: [IIdentificationDto & ICurrencyDto, CustomGeneralType];
+    getAllCurrencies: [undefined, object];
+    getCurrencyById: [IIdentificationDto, object];
+    createCurrency: [ICurrencyDto, object];
+    updateCurrency: [IIdentificationDto & ICurrencyDto, object];
 
-    getAllLanguages: [undefined, CustomGeneralType];
-    getLangById: [IIdentificationDto, CustomGeneralType];
-    createLanguage: [ILangDto, CustomGeneralType];
-    updateLanguage: [IIdentificationDto & ILangDto, CustomGeneralType];
+    getAllLanguages: [undefined, object];
+    getLangById: [IIdentificationDto, object];
+    createLanguage: [ILangDto, object];
+    updateLanguage: [IIdentificationDto & ILangDto, object];
 
-    getAllTimezones: [undefined, CustomGeneralType];
-    getTzById: [IIdentificationDto, CustomGeneralType];
-    createTimezone: [ITzDto, CustomGeneralType];
-    updateTimezone: [IIdentificationDto & ITzDto, CustomGeneralType];
+    getAllTimezones: [undefined, object];
+    getTzById: [IIdentificationDto, object];
+    createTimezone: [ITzDto, object];
+    updateTimezone: [IIdentificationDto & ITzDto, object];
   }> {}
