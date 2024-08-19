@@ -1,5 +1,4 @@
 import { IIdentificationDto, IUserDto, IUserProfileDto, InputPort } from '..';
-import { CustomRecord } from '../..';
 
 export interface UserInputPort
   extends InputPort<{
@@ -9,7 +8,7 @@ export interface UserInputPort
     getUserById: [IIdentificationDto, object];
 
     // for internal usage
-    createUser: [CustomRecord, object];
+    createUser: [object, object];
     // only for administrators
     updateUser: [IIdentificationDto & IUserDto, object];
     // ony for user itself
