@@ -1,9 +1,10 @@
-import { IIdentificationDto, IUserDto, IUserProfileDto, InputPort } from '..';
+import { IIdentificationDto, IListDto, IUserDto, IUserProfileDto, InputPort } from '..';
+import { IUser } from '../..';
 
 export interface UserInputPort
   extends InputPort<{
     // only for administrators
-    getAllUsers: [undefined, object];
+    getAllUsers: [IListDto<IUser> & { filter?: Partial<IUserDto & IIdentificationDto> }, object];
     // mixed
     getUserById: [IIdentificationDto, object];
 

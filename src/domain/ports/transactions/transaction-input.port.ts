@@ -1,18 +1,11 @@
 import { IIdentificationDto, ITransactionDto, ITransactionFilterDto, InputPort } from '..';
-import { ITransaction, OrderCriteria } from '../..';
+import { ITransaction } from '../..';
+import { IListDto } from '../list.dto';
 
 export interface TransactionInputPort
   extends InputPort<{
     getTransactionDetails: [IIdentificationDto, object];
-    getTransactions: [
-      {
-        page: number;
-        perPage: number;
-        sort: OrderCriteria<ITransaction>;
-        filter: ITransactionFilterDto;
-      },
-      object,
-    ];
+    getTransactions: [IListDto<ITransaction> & { filter?: Partial<ITransactionFilterDto> }, object];
 
     createTransaction: [ITransactionDto, object];
     updateTransaction: [IIdentificationDto & ITransactionDto, object];
