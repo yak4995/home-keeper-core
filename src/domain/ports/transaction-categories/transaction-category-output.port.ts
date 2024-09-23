@@ -1,13 +1,13 @@
 import { OutputPort } from '..';
-import { ITransactionCategory } from '../..';
+import { ITransactionCategory, ListResponse } from '../..';
 
 export interface TransactionCategoryOutputPort
   extends OutputPort<{
-    getTransactionCategoryChildren: [ITransactionCategory[], object];
-    getCategoryDirectChildren: [ITransactionCategory[], object];
-    getTopCategories: [ITransactionCategory[], object];
-    getOwnCategories: [ITransactionCategory[], object];
-    searchCategory: [ITransactionCategory[], object];
+    getTransactionCategoryChildren: [ListResponse<ITransactionCategory>, object];
+    getCategoryDirectChildren: [ListResponse<ITransactionCategory>, object];
+    getTopCategories: [ListResponse<ITransactionCategory>, object];
+    getOwnCategories: [ListResponse<ITransactionCategory>, object];
+    searchCategory: [ListResponse<ITransactionCategory>, object];
 
     createCategory: [ITransactionCategory, object];
     updateCategory: [ITransactionCategory, object];

@@ -1,9 +1,9 @@
 import { OutputPort } from '..';
-import { IBudget, IBudgetItem } from '../..';
+import { IBudget, IBudgetItem, ListResponse } from '../..';
 
 export interface BudgetOutputPort
   extends OutputPort<{
-    getBudgets: [IBudget[], object];
+    getBudgets: [ListResponse<IBudget>, object];
     getBudgetDetails: [IBudget, object];
 
     createBudget: [IBudget, object];

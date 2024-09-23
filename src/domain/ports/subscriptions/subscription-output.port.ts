@@ -1,9 +1,9 @@
 import { OutputPort } from '..';
-import { ISubscription } from '../..';
+import { ISubscription, ListResponse } from '../..';
 
 export interface SubscriptionOutputPort
   extends OutputPort<{
-    getSubscriptionsList: [ISubscription[], object];
+    getSubscriptionsList: [ListResponse<ISubscription>, object];
     getSubscriptionDetails: [ISubscription, object];
 
     createSubscription: [ISubscription, object];

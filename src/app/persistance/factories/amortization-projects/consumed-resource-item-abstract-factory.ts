@@ -1,4 +1,4 @@
-import { Criteria, IConsumedResourceItem, IEntityCreator, IRepository } from '../../../..';
+import { IConsumedResourceItem, IEntityCreator, IRepository } from '../../../..';
 import { EntityAbstractFactory } from '../../factories/entity-abstract-factory';
 
 export abstract class ConsumedResourceItemAbstractFactory extends EntityAbstractFactory<IConsumedResourceItem> {
@@ -12,7 +12,7 @@ export abstract class ConsumedResourceItemAbstractFactory extends EntityAbstract
 
   abstract createEntityRepo(): IRepository<IConsumedResourceItem>;
 
-  public createEntityInstance(fields: Criteria<IConsumedResourceItem>): Promise<IConsumedResourceItem> {
+  public createEntityInstance(fields: Partial<IConsumedResourceItem>): Promise<IConsumedResourceItem> {
     return Promise.resolve(this.entityCreator.getInstance(fields));
   }
 

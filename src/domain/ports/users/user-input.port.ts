@@ -4,7 +4,7 @@ import { IUser } from '../..';
 export interface UserInputPort
   extends InputPort<{
     // only for administrators
-    getAllUsers: [IListDto<IUser> & { filter?: Partial<IUserDto & IIdentificationDto> }, object];
+    getAllUsers: [IListDto<IUser>, object];
     // mixed
     getUserById: [IIdentificationDto, object];
 

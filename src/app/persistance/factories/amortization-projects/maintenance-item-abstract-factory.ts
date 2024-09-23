@@ -1,4 +1,4 @@
-import { Criteria, IEntityCreator, IMaintenanceItem, IRepository } from '../../../..';
+import { IEntityCreator, IMaintenanceItem, IRepository } from '../../../..';
 import { EntityAbstractFactory } from '../../factories/entity-abstract-factory';
 
 export abstract class MaintenanceItemAbstractFactory extends EntityAbstractFactory<IMaintenanceItem> {
@@ -10,7 +10,7 @@ export abstract class MaintenanceItemAbstractFactory extends EntityAbstractFacto
 
   abstract createEntityRepo(): IRepository<IMaintenanceItem>;
 
-  public createEntityInstance(fields: Criteria<IMaintenanceItem>): Promise<IMaintenanceItem> {
+  public createEntityInstance(fields: Partial<IMaintenanceItem>): Promise<IMaintenanceItem> {
     return Promise.resolve(this.entityCreator.getInstance(fields));
   }
 

@@ -1,9 +1,9 @@
 import { OutputPort } from '..';
-import { ISupplyList, ISupplyListItem } from '../..';
+import { ISupplyList, ISupplyListItem, ListResponse } from '../..';
 
 export interface SupplyListOutputPort
   extends OutputPort<{
-    getSupplyLists: [ISupplyList[], object];
+    getSupplyLists: [ListResponse<ISupplyList>, object];
     getSupplyListDetails: [ISupplyList, object];
 
     createSupplyListItem: [ISupplyListItem, object];

@@ -1,9 +1,9 @@
 import { OutputPort } from '..';
-import { IEstimationProject, IEstimationProjectItem } from '../..';
+import { IEstimationProject, IEstimationProjectItem, ListResponse } from '../..';
 
 export interface EstimationOutputPort
   extends OutputPort<{
-    getEstimations: [IEstimationProject[], object];
+    getEstimations: [ListResponse<IEstimationProject>, object];
     getEstimationDetails: [IEstimationProject, object];
 
     createEstimation: [IEstimationProject, object];

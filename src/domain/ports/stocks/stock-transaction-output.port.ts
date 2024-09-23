@@ -1,9 +1,9 @@
 import { OutputPort } from '..';
-import { IStockTransaction } from '../..';
+import { IStockTransaction, ListResponse } from '../..';
 
 export interface StockTransactionOutputPort
   extends OutputPort<{
-    getStockTransactionsList: [IStockTransaction[], object];
+    getStockTransactionsList: [ListResponse<IStockTransaction>, object];
     getStockTransactionDetails: [IStockTransaction, object];
 
     createStockTransaction: [IStockTransaction, object];

@@ -1,4 +1,4 @@
-import { Criteria, IEntityCreator, ILanguage, IRepository } from '../../../..';
+import { IEntityCreator, ILanguage, IRepository } from '../../../..';
 import { EntityAbstractFactory } from '../../factories/entity-abstract-factory';
 
 export abstract class LanguageAbstractFactory extends EntityAbstractFactory<ILanguage> {
@@ -10,7 +10,7 @@ export abstract class LanguageAbstractFactory extends EntityAbstractFactory<ILan
 
   abstract createEntityRepo(): IRepository<ILanguage>;
 
-  public createEntityInstance(fields: Criteria<ILanguage>): Promise<ILanguage> {
+  public createEntityInstance(fields: Partial<ILanguage>): Promise<ILanguage> {
     return Promise.resolve(this.entityCreator.getInstance(fields));
   }
 

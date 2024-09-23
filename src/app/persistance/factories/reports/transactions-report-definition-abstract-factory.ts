@@ -1,4 +1,4 @@
-import { Criteria, IEntityCreator, IRepository, ITransactionsReportDefinition } from '../../../..';
+import { IEntityCreator, IRepository, ITransactionsReportDefinition } from '../../../..';
 import { EntityAbstractFactory } from '../../factories/entity-abstract-factory';
 
 export abstract class TransactionsReportDefinitionAbstractFactory extends EntityAbstractFactory<ITransactionsReportDefinition> {
@@ -10,7 +10,7 @@ export abstract class TransactionsReportDefinitionAbstractFactory extends Entity
 
   abstract createEntityRepo(): IRepository<ITransactionsReportDefinition>;
 
-  public createEntityInstance(fields: Criteria<ITransactionsReportDefinition>): Promise<ITransactionsReportDefinition> {
+  public createEntityInstance(fields: Partial<ITransactionsReportDefinition>): Promise<ITransactionsReportDefinition> {
     return Promise.resolve(this.entityCreator.getInstance(fields));
   }
 

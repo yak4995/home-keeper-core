@@ -1,9 +1,9 @@
 import { OutputPort } from '..';
-import { IDebt } from '../..';
+import { IDebt, ListResponse } from '../..';
 
 export interface DebtOutputPort
   extends OutputPort<{
-    getDebtsList: [IDebt[], object];
+    getDebtsList: [ListResponse<IDebt>, object];
     getDebtDetails: [IDebt, object];
 
     createDebt: [IDebt, object];

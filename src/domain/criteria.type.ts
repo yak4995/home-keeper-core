@@ -1,10 +1,48 @@
 import { IPersistantEntity } from '.';
 
+export type ComparisonOperators<T> =
+  | { $eq?: T }
+  | { $neq?: T }
+  | {
+      $in?: T[];
+      $nin?: T[];
+      $lt?: T;
+      $lte?: T;
+      $gt?: T;
+      $gte?: T;
+    };
+
+export type TextOperators<T> = T extends string
+  ? {
+      $text?: string;
+      $regex?: string | RegExp;
+    }
+  : {};
+
+export type ArrayOperators<T> = T extends (infer U)[]
+  ? {
+      $arrayIncludes?: U;
+      $arrayEq?: U[];
+      $arraySize?: number;
+    }
+  : {};
+
+export type FieldOperators<T> = ComparisonOperators<T> & TextOperators<T> & ArrayOperators<T>;
+
 // type, not an interface because "keyof T" what means Utility Types and can`t be applied in interface
-export type Criteria<T extends IPersistantEntity> = {
-  [P in keyof T]?: T[P] | [T[P], T[P]]; // [T[P], T[P]] - from-to values for range filtering
+export type FilterCriteria<T extends IPersistantEntity> = {
+  [P in keyof T]?: FieldOperators<T[P]>;
+};
+
+export type ProjectionCriteria<T extends IPersistantEntity> = {
+  [P in keyof T]?: boolean;
 };
 
 export type OrderCriteria<T extends IPersistantEntity> = {
   [P in keyof T]?: 'ASC' | 'DESC';
 };
+
+export interface ListResponse<T extends IPersistantEntity> {
+  items: T[];
+  count: number;
+}

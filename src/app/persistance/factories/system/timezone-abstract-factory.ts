@@ -1,4 +1,4 @@
-import { Criteria, IEntityCreator, IRepository, ITimezone } from '../../../..';
+import { IEntityCreator, IRepository, ITimezone } from '../../../..';
 import { EntityAbstractFactory } from '../../factories/entity-abstract-factory';
 
 export abstract class TimezoneAbstractFactory extends EntityAbstractFactory<ITimezone> {
@@ -10,7 +10,7 @@ export abstract class TimezoneAbstractFactory extends EntityAbstractFactory<ITim
 
   abstract createEntityRepo(): IRepository<ITimezone>;
 
-  public createEntityInstance(fields: Criteria<ITimezone>): Promise<ITimezone> {
+  public createEntityInstance(fields: Partial<ITimezone>): Promise<ITimezone> {
     return Promise.resolve(this.entityCreator.getInstance(fields));
   }
 

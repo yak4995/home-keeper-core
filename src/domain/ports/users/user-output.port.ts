@@ -1,10 +1,10 @@
 import { OutputPort } from '..';
-import { IUser } from '../..';
+import { IUser, ListResponse } from '../..';
 
 export interface UserOutputPort
   extends OutputPort<{
     // only for administrators
-    getAllUsers: [IUser[], object];
+    getAllUsers: [ListResponse<IUser>, object];
     // mixed
     getUserById: [IUser, object];
 

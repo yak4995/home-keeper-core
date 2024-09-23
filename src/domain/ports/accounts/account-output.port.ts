@@ -1,9 +1,9 @@
 import { OutputPort } from '..';
-import { IAccount } from '../..';
+import { IAccount, ListResponse } from '../..';
 
 export interface AccountOutputPort
   extends OutputPort<{
-    getAccounts: [IAccount[], object];
+    getAccounts: [ListResponse<IAccount>, object];
     getAccountDetails: [IAccount, object];
     getBalance: [{ result: number }, object];
 

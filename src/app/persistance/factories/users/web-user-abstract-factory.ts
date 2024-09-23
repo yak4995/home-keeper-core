@@ -4,7 +4,6 @@ import { IRepository } from '../../repositories';
 import { IEntityCreator } from '../../creators';
 import { IWebUser } from '../../entities';
 
-import { Criteria } from '../../../../domain/criteria.type';
 import { IUser } from '../../../../domain/entities';
 
 export abstract class WebUserAbstractFactory extends UserAbstractFactory {
@@ -16,7 +15,7 @@ export abstract class WebUserAbstractFactory extends UserAbstractFactory {
 
   abstract createEntityRepo(): IRepository<IWebUser>;
 
-  public createEntityInstance(fields: Criteria<IWebUser>): Promise<IUser> {
+  public createEntityInstance(fields: Partial<IWebUser>): Promise<IUser> {
     return Promise.resolve(this.entityCreator.getInstance(fields));
   }
 

@@ -1,9 +1,9 @@
 import { OutputPort } from '..';
-import { ITax } from '../..';
+import { ITax, ListResponse } from '../..';
 
 export interface TaxOutputPort
   extends OutputPort<{
-    getTaxesList: [ITax[], object];
+    getTaxesList: [ListResponse<ITax>, object];
     getTaxDetail: [ITax, object];
 
     createTax: [ITax, object];

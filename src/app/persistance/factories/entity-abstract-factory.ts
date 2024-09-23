@@ -1,4 +1,4 @@
-import { IPersistantEntity, IEntityCreator, Criteria, IRepository } from '../../..';
+import { IPersistantEntity, IEntityCreator, IRepository } from '../../..';
 
 // Abstract factory and singleton patterns
 // For instantiating objects of related classes without their source dependency
@@ -6,7 +6,7 @@ import { IPersistantEntity, IEntityCreator, Criteria, IRepository } from '../../
 export abstract class EntityAbstractFactory<T extends IPersistantEntity> {
   protected constructor(protected entityCreator: IEntityCreator<T>) {}
 
-  public createEntityInstance(fields: Criteria<T>): Promise<T> {
+  public createEntityInstance(fields: Partial<T>): Promise<T> {
     return Promise.resolve(this.entityCreator.getInstance(fields));
   }
 

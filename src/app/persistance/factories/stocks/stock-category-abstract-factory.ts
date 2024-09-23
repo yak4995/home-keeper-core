@@ -1,4 +1,4 @@
-import { Criteria, IEntityCreator, IRepository, IStockCategory } from '../../../..';
+import { IEntityCreator, IRepository, IStockCategory } from '../../../..';
 import { EntityAbstractFactory } from '../../factories/entity-abstract-factory';
 
 export abstract class StockCategoryAbstractFactory extends EntityAbstractFactory<IStockCategory> {
@@ -10,7 +10,7 @@ export abstract class StockCategoryAbstractFactory extends EntityAbstractFactory
 
   abstract createEntityRepo(): IRepository<IStockCategory>;
 
-  public createEntityInstance(fields: Criteria<IStockCategory>): Promise<IStockCategory> {
+  public createEntityInstance(fields: Partial<IStockCategory>): Promise<IStockCategory> {
     return Promise.resolve(this.entityCreator.getInstance(fields));
   }
 

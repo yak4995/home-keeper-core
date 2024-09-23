@@ -1,4 +1,4 @@
-import { Criteria, IEntityCreator, IRepository, ISupplyListItem } from '../../../..';
+import { IEntityCreator, IRepository, ISupplyListItem } from '../../../..';
 import { EntityAbstractFactory } from '../../factories/entity-abstract-factory';
 
 export abstract class SupplyListItemAbstractFactory extends EntityAbstractFactory<ISupplyListItem> {
@@ -10,7 +10,7 @@ export abstract class SupplyListItemAbstractFactory extends EntityAbstractFactor
 
   abstract createEntityRepo(): IRepository<ISupplyListItem>;
 
-  public createEntityInstance(fields: Criteria<ISupplyListItem>): Promise<ISupplyListItem> {
+  public createEntityInstance(fields: Partial<ISupplyListItem>): Promise<ISupplyListItem> {
     return Promise.resolve(this.entityCreator.getInstance(fields));
   }
 

@@ -1,9 +1,9 @@
 import { OutputPort } from '..';
-import { IAmortizationProject, IConsumedResourceItem, IMaintenanceItem } from '../..';
+import { IAmortizationProject, IConsumedResourceItem, IMaintenanceItem, ListResponse } from '../..';
 
 export interface AmortizationOutputPort
   extends OutputPort<{
-    getAmortizations: [IAmortizationProject[], object];
+    getAmortizations: [ListResponse<IAmortizationProject>, object];
     getAmortizationDetails: [IAmortizationProject, object];
 
     createAmortization: [IAmortizationProject, object];
