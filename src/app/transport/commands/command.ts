@@ -1,5 +1,8 @@
 export abstract class Command<T> {
-  constructor(protected readonly initialState: T, protected readonly desiredState: T) {}
+  constructor(
+    protected readonly initialState: T,
+    protected readonly desiredState: T,
+  ) {}
 
   // They can have access to initialState and desiredState through this
   /*
