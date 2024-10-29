@@ -1,15 +1,15 @@
-import { InputPort } from '..';
-import { ID, IIdentificationDto } from '../..';
+import { InputPort, IProjectionDto } from '..';
+import { ID, IHousehold, IIdentificationDto } from '../..';
 
 export interface HouseholdInputPort
   extends InputPort<{
     // from household member:
     getSentInvitations: [IIdentificationDto, object];
     createInvitation: [{ userId: ID } & IIdentificationDto, object];
-    deleteInvitation: [IIdentificationDto, object];
+    deleteInvitation: [{ userId: ID } & IIdentificationDto, object];
 
-    getUserHouseholds: [{ memberId: ID }, object];
-    getHousehold: [IIdentificationDto, object];
+    getUserHouseholds: [{ memberId: ID } & IProjectionDto<IHousehold>, object];
+    getHousehold: [IIdentificationDto & IProjectionDto<IHousehold>, object];
 
     createHousehold: [{ memberId: ID; name: string }, object];
     updateHousehold: [{ name: string } & IIdentificationDto, object];

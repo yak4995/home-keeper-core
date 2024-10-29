@@ -1,4 +1,4 @@
-import { IIdentificationDto, IListDto, IUserDto, IUserProfileDto, InputPort } from '..';
+import { IIdentificationDto, IListDto, IProjectionDto, IUserDto, IUserProfileDto, InputPort } from '..';
 import { IUser } from '../..';
 
 export interface UserInputPort
@@ -6,7 +6,7 @@ export interface UserInputPort
     // only for administrators
     getAllUsers: [IListDto<IUser>, object];
     // mixed
-    getUserById: [IIdentificationDto, object];
+    getUserById: [IIdentificationDto & IProjectionDto<IUser>, object];
 
     // for internal usage
     createUser: [object, object];

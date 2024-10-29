@@ -27,7 +27,9 @@ export type ArrayOperators<T> = T extends (infer U)[]
     }
   : {};
 
-export type FieldOperators<T> = ComparisonOperators<T> & TextOperators<T> & ArrayOperators<T>;
+export type FieldOperators<T> = T extends IPersistantEntity
+  ? { id: ComparisonOperators<T['id']> }
+  : ComparisonOperators<T> & TextOperators<T> & ArrayOperators<T>;
 
 // type, not an interface because "keyof T" what means Utility Types and can`t be applied in interface
 export type FilterCriteria<T extends IPersistantEntity> = {
@@ -35,7 +37,7 @@ export type FilterCriteria<T extends IPersistantEntity> = {
 };
 
 export type ProjectionCriteria<T extends IPersistantEntity> = {
-  [P in keyof T]?: boolean;
+  [P in keyof T]?: 0 | 1;
 };
 
 export type OrderCriteria<T extends IPersistantEntity> = {

@@ -1,4 +1,4 @@
-import { IPersistantEntity, ICurrency, ILanguage, ITimezone, IHousehold } from '..';
+import { IPersistantEntity, ICurrency, ILanguage, ITimezone, IHousehold, IHouseholdInvitation } from '..';
 import { UserRole } from '../..';
 
 export interface IUser extends IPersistantEntity {
@@ -7,4 +7,5 @@ export interface IUser extends IPersistantEntity {
   lang: ILanguage;
   defaultCurrency: ICurrency;
   households: IHousehold[];
+  invitations: IHouseholdInvitation[];
 }

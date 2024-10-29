@@ -5,6 +5,7 @@ export interface ITransaction extends IPersistantEntity {
   amount: number;
   description?: string;
   account: IAccount;
+  counterpartyAccount?: IAccount;
   currency: ICurrency;
   category: ITransactionCategory;
 }

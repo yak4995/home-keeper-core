@@ -1,10 +1,14 @@
-import { IPersistantEntity, ICurrency, IHousehold } from '..';
+import { IPersistantEntity, ICurrency, IHousehold, IBudget } from '..';
 
 export interface IAccount extends IPersistantEntity {
   name: string;
   initialBalance: number;
-  owner: IHousehold;
-  currency: ICurrency;
+
+  // can be system (from incoming txs)
+  owner?: IHousehold;
+  currency?: ICurrency;
+
+  budgets: IBudget[];
 
   getBalanceForDate: (datetime: Date) => Promise<number>;
 }

@@ -23,10 +23,28 @@ export interface IRepository<T extends IPersistantEntity> {
     opts: Record<string, unknown>,
   ): Promise<ListResponse<T>>;
 
-  findById(id: ID, opts: Record<string, unknown>): Promise<T>;
-  findOneByAndCriteria(searchCriteria: FilterCriteria<T>, opts: Record<string, unknown>): Promise<T>;
-  findByAndCriteria(searchCriteria: FilterCriteria<T>, opts: Record<string, unknown>): Promise<T[]>;
-  findByOrCriteria(searchCriteria: FilterCriteria<T>, opts: Record<string, unknown>): Promise<T[]>;
+  findById(payload: { id: ID; projection: ProjectionCriteria<T> }, opts: Record<string, unknown>): Promise<T>;
+  findOneByAndCriteria(
+    payload: {
+      searchCriteria: FilterCriteria<T>;
+      projection: ProjectionCriteria<T>;
+    },
+    opts: Record<string, unknown>,
+  ): Promise<T>;
+  findByAndCriteria(
+    payload: {
+      searchCriteria: FilterCriteria<T>;
+      projection: ProjectionCriteria<T>;
+    },
+    opts: Record<string, unknown>,
+  ): Promise<T[]>;
+  findByOrCriteria(
+    payload: {
+      searchCriteria: FilterCriteria<T>;
+      projection: ProjectionCriteria<T>;
+    },
+    opts: Record<string, unknown>,
+  ): Promise<T[]>;
 
   update<K extends keyof T>(
     payload: {
@@ -38,6 +56,6 @@ export interface IRepository<T extends IPersistantEntity> {
 
   delete(deleteCriteria: FilterCriteria<T>, opts: Record<string, unknown>): Promise<number>;
 
-  getRelatedEntity<V>(id: ID, fieldName: keyof T, opts: Record<string, unknown>): Promise<V>;
-  getRelatedEntities<V>(id: ID, fieldName: keyof T, opts: Record<string, unknown>): Promise<V[]>;
+  getRelatedEntity<V>(payload: { id: ID; fieldName: keyof T }, opts: Record<string, unknown>): Promise<V>;
+  getRelatedEntities<V>(payload: { id: ID; fieldName: keyof T }, opts: Record<string, unknown>): Promise<V[]>;
 }

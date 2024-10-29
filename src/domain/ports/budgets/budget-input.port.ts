@@ -1,10 +1,10 @@
-import { IBudgetDto, IBudgetItemDto, IIdentificationDto, InputPort } from '..';
-import { ID, IHousehold } from '../..';
+import { IBudgetDto, IBudgetItemDto, IIdentificationDto, InputPort, IProjectionDto } from '..';
+import { IBudget, ID, IHousehold, ProjectionCriteria } from '../..';
 
 export interface BudgetInputPort
   extends InputPort<{
-    getBudgets: [{ owner: IHousehold; accountIds: ID[]; from: Date; to: Date }, object];
-    getBudgetDetails: [IIdentificationDto, object];
+    getBudgets: [{ owner: IHousehold; accountIds: ID[]; from: Date; to: Date } & IProjectionDto<IBudget>, object];
+    getBudgetDetails: [IIdentificationDto & IProjectionDto<IBudget>, object];
 
     createBudget: [IBudgetDto, object];
     updateBudget: [IIdentificationDto & IBudgetDto, object];
