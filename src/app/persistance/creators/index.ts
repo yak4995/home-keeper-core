@@ -7,6 +7,8 @@ export * from './system/timezone-creator.interface';
 export * from './users/user-creator.interface';
 export * from './users/web-user-creator.interface';
 
+export * from './notifications/notification-creator.interface';
+
 export * from './household/household-creator.interface';
 export * from './household/household-invitation-creator.interface';
 

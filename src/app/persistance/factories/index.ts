@@ -7,6 +7,8 @@ export * from './system/timezone-abstract-factory';
 export * from './users/user-abstract-factory';
 export * from './users/web-user-abstract-factory';
 
+export * from './notifications/notification-abstract-factory';
+
 export * from './household/household-abstract-factory';
 export * from './household/household-invitation-abstract-factory';
 

@@ -7,6 +7,8 @@ export * from './system/timezone-repository.interface';
 export * from './users/user-repository.interface';
 export * from './users/web-user-repository.interface';
 
+export * from './notifications/notifications-repository.interface';
+
 export * from './household/household-repository.interface';
 export * from './household/household-invitation-repository.interface';
 
