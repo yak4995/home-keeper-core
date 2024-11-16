@@ -5,4 +5,5 @@ export interface IHouseholdInvitation extends IPersistantEntity {
   household: IHousehold;
   user: IUser;
   status: HouseholdInvitationStatusEnum;
+  isOwner: boolean;
 }

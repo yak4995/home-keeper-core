@@ -1,13 +1,13 @@
-import { IIdentificationDto, IAccountDto, InputPort, IProjectionDto } from '..';
-import { IAccount, IUser } from '../..';
+import { IIdentificationDto, IAccountDto, InputPort, IProjectionDto, IListDto } from '..';
+import { IAccount } from '../..';
 
 export interface AccountInputPort
   extends InputPort<{
-    getAccounts: [IUser & IProjectionDto<IAccount>, object];
+    getAccounts: [IListDto<IAccount> & IProjectionDto<IAccount>, object];
     getAccountDetails: [IIdentificationDto & IProjectionDto<IAccount>, object];
     getBalance: [{ at?: Date } & IIdentificationDto, object];
 
-    createAccount: [{ user: IUser } & IAccountDto, object];
+    createAccount: [IAccountDto, object];
     updateAccount: [IIdentificationDto & IAccountDto, object];
     deleteAccount: [IIdentificationDto, object];
   }> {}
