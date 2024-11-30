@@ -1,1 +1,4 @@
-export type SystemOpts = { trace: string };
+export type SystemOpts = {
+  trace: string;
+  isSystemCall?: boolean;
+};
