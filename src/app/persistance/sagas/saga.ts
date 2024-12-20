@@ -34,13 +34,12 @@ export abstract class Saga<T> {
         }
       }
     } catch (sagaError) {
-      if (!!failedStepIndex)
-        for (const step of this.steps.slice(0, failedStepIndex).reverse())
-          try {
-            await step.rollback(this.context, this.opts);
-          } catch {
-            // Continue rollback of other steps
-          }
+      for (const step of this.steps.slice(0, failedStepIndex + 1).reverse())
+        try {
+          await step.rollback(this.context, this.opts);
+        } catch {
+          // Continue rollback of other steps
+        }
       throw sagaError;
     }
   }

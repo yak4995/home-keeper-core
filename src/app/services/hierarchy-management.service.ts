@@ -1,12 +1,15 @@
-import { ID, IPersistantEntity } from '../../domain';
+import { ID, IPersistantEntity, ListResponse } from '../../domain';
 import { IRepository } from '..';
 
 export abstract class IHierarchyService<T extends IPersistantEntity & { parent?: T }> {
   constructor(protected readonly repository: IRepository<T>) {}
 
-  abstract getParent(id: ID): Promise<T | null>;
-  abstract getDirectChildren(id: ID, ownerId: ID): Promise<T[]>;
-  abstract geAllChildren(id: ID, ownerId: ID): Promise<T[]>;
-  abstract getSiblings(id: ID, ownerId: ID): Promise<T[]>;
-  abstract getDepth(id: ID): Promise<number>;
+  abstract getParent(id: ID, opts: Record<string, unknown>): Promise<T | null>;
+  abstract getDirectChildren(
+    payload: { id: ID; ownerId?: ID },
+    opts: Record<string, unknown>,
+  ): Promise<ListResponse<T>>;
+  abstract geAllChildren(payload: { id: ID; ownerId?: ID }, opts: Record<string, unknown>): Promise<ListResponse<T>>;
+  abstract getSiblings(payload: { id: ID; ownerId?: ID }, opts: Record<string, unknown>): Promise<ListResponse<T>>;
+  abstract getDepth(id: ID, opts: Record<string, unknown>): Promise<number>;
 }
