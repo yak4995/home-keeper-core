@@ -1,4 +1,4 @@
-import { ITransactionAnalyticDto, InputPort } from '..';
+import { ITransactionAnalyticDto, ITransactionChangeAnalyticDto, InputPort } from '..';
 
 export interface TransactionAnalyticInputPort
   extends InputPort<{
@@ -8,6 +8,7 @@ export interface TransactionAnalyticInputPort
     getTransactionsSum: [ITransactionAnalyticDto, object];
     getTransactionsAverage: [ITransactionAnalyticDto, object];
     getTransactionsMedian: [ITransactionAnalyticDto, object];
-    getTransactionsRatio: [ITransactionAnalyticDto, object];
-    getTransactionsChange: [ITransactionAnalyticDto, object];
+    getTransactionsSumRatio: [ITransactionAnalyticDto, object];
+    getTransactionsCountRatio: [ITransactionAnalyticDto, object];
+    getTransactionsChange: [ITransactionChangeAnalyticDto, object];
   }> {}

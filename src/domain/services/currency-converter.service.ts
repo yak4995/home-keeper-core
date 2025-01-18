@@ -1,3 +1,12 @@
+import { ID } from '../entities';
+
 export interface CurrencyConverterService {
-  getRateFor(codeFrom: string, codeTo: string, forDate: Date): Promise<number>;
+  getRateFor(
+    payload: {
+      from: ID;
+      to: ID;
+      forDate: Date;
+    },
+    opts: Record<string, unknown>,
+  ): Promise<{ rate: number }>;
 }

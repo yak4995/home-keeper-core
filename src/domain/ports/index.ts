@@ -87,8 +87,8 @@ export * from './transaction-categories/transaction-category-input.port';
 export * from './transaction-categories/transaction-category-output.port';
 
 export * from './transactions/dto/transaction-analytic.dto';
+export * from './transactions/dto/transaction-change-analytic.dto';
 export * from './transactions/dto/transaction.dto';
-export * from './transactions/dto/transaction-filter.dto';
 export * from './transactions/transaction-analytic-input.port';
 export * from './transactions/transaction-analytic-output.port';
 export * from './transactions/transaction-input.port';

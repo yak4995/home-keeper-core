@@ -1,10 +1,11 @@
 import { ID } from '../../..';
 
 export interface ITransactionDto {
-  datetime: Date;
+  date: Date;
   amount: number;
-  transactionCategoryId: ID;
   currencyId: ID;
   accountId: ID;
-  description: string;
+  transactionCategoryId: ID;
+  counterpartyAccount?: ID;
+  description?: string;
 }

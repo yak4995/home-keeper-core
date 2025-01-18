@@ -8,6 +8,7 @@ export interface TransactionAnalyticOutputPort
     getTransactionsSum: [{ result: number }, object];
     getTransactionsAverage: [{ result: number }, object];
     getTransactionsMedian: [{ result: number }, object];
-    getTransactionsRatio: [IAnalyticComparisonDto, object];
+    getTransactionsSumRatio: [IAnalyticComparisonDto, object];
+    getTransactionsCountRatio: [IAnalyticComparisonDto, object];
     getTransactionsChange: [IAnalyticComparisonDto, object];
   }> {}

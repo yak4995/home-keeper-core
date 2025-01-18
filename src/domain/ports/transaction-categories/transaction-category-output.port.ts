@@ -9,6 +9,7 @@ export interface TransactionCategoryOutputPort
 
     list: [ListResponse<ITransactionCategory>, object];
     search: [ListResponse<ITransactionCategory>, object];
+    getById: [ITransactionCategory, object];
 
     createCategory: [ITransactionCategory, object];
     updateCategory: [ITransactionCategory, object];

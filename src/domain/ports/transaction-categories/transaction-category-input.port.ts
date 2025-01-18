@@ -9,6 +9,7 @@ export interface TransactionCategoryInputPort
 
     list: [{ ownerId?: ID } & IProjectionDto<ITransactionCategory>, object];
     search: [{ ownerId?: ID; name?: string } & IProjectionDto<ITransactionCategory>, object];
+    getById: [IIdentificationDto & IProjectionDto<ITransactionCategory>, object];
 
     createCategory: [ITransactionCategoryDto, object];
     updateCategory: [IIdentificationDto & ITransactionCategoryDto, object];

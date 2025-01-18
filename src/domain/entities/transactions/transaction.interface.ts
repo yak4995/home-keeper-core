@@ -3,9 +3,9 @@ import { IPersistantEntity, IAccount, ICurrency, ITransactionCategory } from '..
 export interface ITransaction extends IPersistantEntity {
   date: Date;
   amount: number;
-  description?: string;
-  account: IAccount;
-  counterpartyAccount?: IAccount;
   currency: ICurrency;
-  category: ITransactionCategory;
+  account: IAccount;
+  transactionCategory: ITransactionCategory;
+  counterpartyAccount?: IAccount;
+  description?: string;
 }
