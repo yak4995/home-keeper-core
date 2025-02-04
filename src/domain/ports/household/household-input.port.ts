@@ -22,4 +22,7 @@ export interface HouseholdInputPort
 
     // from system:
     deleteHousehold: [IIdentificationDto, object];
+
+    // for clearing cache, etc...
+    syncState: [{ userIds: ID[] }, object];
   }> {}

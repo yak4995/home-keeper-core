@@ -1,5 +1,6 @@
-import { ID } from '..';
+import { IUser } from '..';
+import { SystemOpts } from '../../app';
 
 export interface AuthorizationService {
-  doesHaveAccess(userId: ID, action: string, entityType: string, entityId: string): Promise<boolean>;
+  doesHaveAccess(user: IUser, action: string, payload: object, { trace }: SystemOpts): Promise<void>;
 }

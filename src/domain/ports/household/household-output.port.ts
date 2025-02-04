@@ -22,4 +22,7 @@ export interface HouseholdOutputPort
 
     // from system
     deleteHousehold: [IHousehold, object];
+
+    // for clearing cache, etc...
+    syncState: [{ success: boolean }, object];
   }> {}

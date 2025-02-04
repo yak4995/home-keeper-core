@@ -5,7 +5,6 @@ export * from './identification.dto';
 export * from './list.dto';
 export * from './projection.dto';
 
-export * from './analytic.dto';
 export * from './analytic-comparison.dto';
 
 export * from './accounts/dto/account.dto';

@@ -1,5 +1,5 @@
 import { IIdentificationDto, IListDto, IProjectionDto, IUserDto, IUserProfileDto, InputPort } from '..';
-import { IUser } from '../..';
+import { ID, IUser } from '../..';
 
 export interface UserInputPort
   extends InputPort<{
@@ -15,4 +15,7 @@ export interface UserInputPort
     // ony for user itself
     changeProfileInfo: [IIdentificationDto & IUserProfileDto, object];
     deleteAccount: [IIdentificationDto, object];
+
+    // for clearing cache, etc...
+    syncState: [{ userIds: ID[] }, object];
   }> {}

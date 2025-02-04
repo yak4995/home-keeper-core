@@ -15,4 +15,7 @@ export interface UserOutputPort
     // ony for user itself
     changeProfileInfo: [IUser, object];
     deleteAccount: [IUser, object];
+
+    // for clearing cache, etc...
+    syncState: [{ success: boolean }, object];
   }> {}
