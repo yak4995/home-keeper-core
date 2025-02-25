@@ -1,3 +1,5 @@
+export * from './accounts/bank.enum';
+
 export * from './household/household-invitation-status.enum';
 
 export * from './users/user-role.enum';

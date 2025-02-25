@@ -37,7 +37,13 @@ export type FilterCriteria<T extends IPersistantEntity> = {
 };
 
 export type ProjectionCriteria<T extends IPersistantEntity> = {
-  [P in keyof T]?: 0 | 1;
+  [P in keyof T]?: T[P] extends (infer U)[]
+    ? U extends IPersistantEntity
+      ? 0 | 1 | ProjectionCriteria<U>
+      : 0 | 1
+    : T[P] extends IPersistantEntity
+      ? 0 | 1 | ProjectionCriteria<T[P]>
+      : 0 | 1;
 };
 
 export type OrderCriteria<T extends IPersistantEntity> = {

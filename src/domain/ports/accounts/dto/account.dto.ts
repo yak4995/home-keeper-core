@@ -1,4 +1,4 @@
-import { ID } from '../../..';
+import { Bank, ID } from '../../..';
 
 export interface IAccountDto {
   householdId: ID;
@@ -6,7 +6,7 @@ export interface IAccountDto {
   name: string;
   currencyId: ID;
   initialBalance: number;
+  bank: Bank;
 
   iban?: string;
-  bankName?: string;
 }

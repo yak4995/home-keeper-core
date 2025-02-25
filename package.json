@@ -1,6 +1,6 @@
 {
   "name": "@yak4995/home-keeper-core",
-  "version": "0.0.113",
+  "version": "0.0.119",
   "description": "Lib what define all core interfaces for home keeper",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -22,12 +22,13 @@
   },
   "homepage": "https://github.com/yak4995/home-keeper-core#readme",
   "devDependencies": {
+    "@types/node": "^22.13.4",
     "prettier": "^3.0.0",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^5.1.3"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/"
   }
 }

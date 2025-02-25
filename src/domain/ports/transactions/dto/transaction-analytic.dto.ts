@@ -6,5 +6,5 @@ export interface ITransactionAnalyticDto {
   accountIds: ID[];
   currencyId: ID;
   transactionCategoryId: ID;
-  counterpartyAccount?: ID;
+  // counterpartyId?: ID;
 }

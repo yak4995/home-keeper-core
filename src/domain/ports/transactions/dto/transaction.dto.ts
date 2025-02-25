@@ -6,6 +6,6 @@ export interface ITransactionDto {
   currencyId: ID;
   accountId: ID;
   transactionCategoryId: ID;
-  counterpartyAccount?: ID;
+  // counterparty?: ID
   description?: string;
 }
