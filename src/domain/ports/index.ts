@@ -20,6 +20,7 @@ export * from './amortization-projects/amortization-output.port';
 export * from './budgets/dto/budget.dto';
 export * from './budgets/dto/budget.item.dto';
 export * from './budgets/dto/budget-analytic.dto';
+export * from './budgets/dto/budget-change-analytic.dto';
 export * from './budgets/budget-input.port';
 export * from './budgets/budget-output.port';
 export * from './budgets/budget-analytic-input.port';

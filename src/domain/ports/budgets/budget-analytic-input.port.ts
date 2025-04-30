@@ -1,9 +1,7 @@
-import { IBudgetAnalyticDto, InputPort } from '..';
+import { IBudgetAnalyticDto, IBudgetChangeAnalyticDto, InputPort } from '..';
 
 export interface BudgetAnalyticInputPort
   extends InputPort<{
-    getMaxDifference: [IBudgetAnalyticDto, object];
-    getMinDifference: [IBudgetAnalyticDto, object];
-    getBudgetsRatio: [IBudgetAnalyticDto, object];
-    getBudgetsChange: [IBudgetAnalyticDto, object];
+    getRatio: [IBudgetAnalyticDto, object];
+    getChange: [IBudgetChangeAnalyticDto, object];
   }> {}

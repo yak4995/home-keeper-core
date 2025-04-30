@@ -10,6 +10,9 @@ export interface BudgetOutputPort
     updateBudget: [IBudget, object];
     deleteBudget: [IBudget, object];
 
+    getBudgetItems: [ListResponse<IBudgetItem>, object];
+    getBudgetItem: [IBudgetItem, object];
+
     createBudgetItem: [IBudgetItem, object];
     updateBudgetItem: [IBudgetItem, object];
     deleteBudgetItem: [IBudgetItem, object];
