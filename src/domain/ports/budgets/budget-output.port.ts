@@ -16,4 +16,7 @@ export interface BudgetOutputPort
     createBudgetItem: [IBudgetItem, object];
     updateBudgetItem: [IBudgetItem, object];
     deleteBudgetItem: [IBudgetItem, object];
+
+    // from system:
+    getByOwnerIds: [IBudget[], object];
   }> {}

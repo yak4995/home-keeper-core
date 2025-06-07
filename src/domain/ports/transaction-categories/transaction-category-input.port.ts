@@ -14,4 +14,8 @@ export interface TransactionCategoryInputPort
     createCategory: [ITransactionCategoryDto, object];
     updateCategory: [IIdentificationDto & ITransactionCategoryDto, object];
     deleteCategory: [IIdentificationDto, object];
+
+    // from system:
+    getByIds: [{ ids: ID[] } & IProjectionDto<ITransactionCategory>, object];
+    getByOwnerIds: [{ ownerIds: ID[] } & IProjectionDto<ITransactionCategory>, object];
   }> {}

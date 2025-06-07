@@ -56,6 +56,7 @@ export interface IRepository<T extends IPersistantEntity> {
 
   delete(deleteCriteria: FilterCriteria<T>, opts: Record<string, unknown>): Promise<number>;
 
-  getRelatedEntity<V>(payload: { id: ID; fieldName: keyof T }, opts: Record<string, unknown>): Promise<V>;
-  getRelatedEntities<V>(payload: { id: ID; fieldName: keyof T }, opts: Record<string, unknown>): Promise<V[]>;
+  addRelatedEntities(target: T, projection: ProjectionCriteria<T>, opts: Record<string, unknown>): Promise<T>;
+
+  mapRelatedEntities(target: T[], projection: ProjectionCriteria<T>, opts: Record<string, unknown>): Promise<T[]>;
 }

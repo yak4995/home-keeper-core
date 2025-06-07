@@ -1,5 +1,5 @@
 import { InputPort, IProjectionDto } from '..';
-import { ID, IHousehold, IIdentificationDto } from '../..';
+import { ID, IHousehold, IHouseholdInvitation, IIdentificationDto } from '../..';
 
 export interface HouseholdInputPort
   extends InputPort<{
@@ -22,6 +22,8 @@ export interface HouseholdInputPort
 
     // from system:
     deleteHousehold: [IIdentificationDto, object];
+    getHouseholdsByIds: [{ ids: ID[] } & IProjectionDto<IHousehold>, object];
+    getInvitationsByUserIds: [{ userIds: ID[] } & IProjectionDto<IHouseholdInvitation>, object];
 
     // for clearing cache, etc...
     syncState: [{ userIds: ID[] }, object];

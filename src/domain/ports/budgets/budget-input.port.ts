@@ -16,4 +16,7 @@ export interface BudgetInputPort
     createBudgetItem: [{ budgetId: ID } & IBudgetItemDto, object];
     updateBudgetItem: [IIdentificationDto & IBudgetItemDto, object];
     deleteBudgetItem: [IIdentificationDto, object];
+
+    // from system:
+    getByOwnerIds: [{ ownerIds: ID[] } & IProjectionDto<IBudget>, object];
   }> {}

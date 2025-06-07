@@ -22,6 +22,8 @@ export interface HouseholdOutputPort
 
     // from system
     deleteHousehold: [IHousehold, object];
+    getHouseholdsByIds: [IHousehold[], object];
+    getInvitationsByUserIds: [IHouseholdInvitation[], object];
 
     // for clearing cache, etc...
     syncState: [{ success: boolean }, object];
