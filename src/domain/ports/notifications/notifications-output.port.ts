@@ -1,5 +1,5 @@
-import { IIdentificationDto, OutputPort } from '..';
-import { ListResponse, INotification, ID } from '../..';
+import { OutputPort } from '..';
+import { ListResponse, INotification } from '../..';
 
 export interface NotificationsOutputPort
   extends OutputPort<{

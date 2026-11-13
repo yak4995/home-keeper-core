@@ -1,4 +1,4 @@
-import { IPersistantEntity, IBudget, ICurrency, ITransactionCategory, ITransaction } from '..';
+import { IPersistantEntity, IBudget, ITransactionCategory } from '..';
 
 export interface IBudgetItem extends IPersistantEntity {
   budget: IBudget;
