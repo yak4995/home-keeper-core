@@ -24,6 +24,7 @@ export abstract class Saga<T> {
 
   async execute(): Promise<void> {
     let failedStepIndex: number = 0;
+
     try {
       for (let i = 0; i < this.steps.length; i++) {
         try {
@@ -34,12 +35,27 @@ export abstract class Saga<T> {
         }
       }
     } catch (sagaError) {
-      for (const step of this.steps.slice(0, failedStepIndex + 1).reverse())
+      const rollbackErrors: unknown[] = [];
+
+      for (const step of this.steps.slice(0, failedStepIndex + 1).reverse()) {
         try {
           await step.rollback(this.context, this.opts);
-        } catch {
-          // Continue rollback of other steps
+        } catch (rollbackError) {
+          rollbackErrors.push(rollbackError);
+          // continue rolling back the remaining steps even if one rollback fails
         }
+      }
+
+      if (rollbackErrors.length) {
+        throw new AggregateError(
+          [sagaError, ...rollbackErrors],
+          `Saga failed (${sagaError instanceof Error ? sagaError.message : String(sagaError)}); compensation incomplete: ${rollbackErrors.map((error) => (error instanceof Error ? error.message : String(error))).join('; ')}`,
+          {
+            cause: sagaError,
+          },
+        );
+      }
+
       throw sagaError;
     }
   }

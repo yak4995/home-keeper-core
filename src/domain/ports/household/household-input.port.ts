@@ -27,4 +27,10 @@ export interface HouseholdInputPort
 
     // for clearing cache, etc...
     syncState: [{ userIds: ID[] }, object];
+    /*
+      This is used in the context of a saga to restore invitations
+      that were deleted as part of a larger operation
+      that failed and needs to be rolled back.
+    */
+    restoreInvitations: [{ invitations: IHouseholdInvitation[] }, void];
   }> {}

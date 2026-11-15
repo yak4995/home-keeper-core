@@ -10,4 +10,10 @@ export interface NotificationsInputPort
     getUserMessages: [IListDto<INotification>, object];
     markAsRead: [{ ids: ID[] }, object];
     deleteMessages: [{ ids: ID[] }, object];
+    /*
+      This is used in the context of a saga to restore notifications
+      that were deleted as part of a larger operation
+      that failed and needs to be rolled back.
+    */
+    restoreNotifications: [{ notifications: INotification[] }, void];
   }> {}

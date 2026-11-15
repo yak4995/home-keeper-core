@@ -19,4 +19,16 @@ export interface BudgetInputPort
 
     // from system:
     getByOwnerIds: [{ ownerIds: ID[] } & IProjectionDto<IBudget>, object];
+    /*
+      This is used in the context of a saga to restore budgets and budget items
+      that were deleted as part of a larger operation
+      that failed and needs to be rolled back.
+    */
+    restoreBudgets: [{ budgets: IBudget[] }, void];
+    /*
+      This is used in the context of a saga to restore budget items
+      that were deleted as part of a larger operation
+      that failed and needs to be rolled back.
+    */
+    restoreBudgetItems: [{ items: IBudgetItem[] }, void];
   }> {}

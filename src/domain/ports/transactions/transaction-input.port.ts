@@ -31,4 +31,10 @@ export interface TransactionInputPort
       },
       object,
     ];
+    /*
+      This is used in the context of a saga to restore transactions
+      that were deleted as part of a larger operation
+      that failed and needs to be rolled back.
+    */
+    restoreTransactions: [{ transactions: ITransaction[] }, void];
   }> {}

@@ -12,6 +12,9 @@ export interface IRepository<T extends IPersistantEntity> {
   insert(entity: T, opts: Record<string, unknown>): Promise<T>;
   insertMany(entities: T[], opts: Record<string, unknown>): Promise<number>;
 
+  upsert(entity: T, opts: Record<string, unknown>): Promise<T>;
+  upsertMany(entities: T[], opts: Record<string, unknown>): Promise<number>;
+
   list(
     payload: {
       filter?: FilterCriteria<T>;

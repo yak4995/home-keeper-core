@@ -18,4 +18,10 @@ export interface TransactionCategoryInputPort
     // from system:
     getByIds: [{ ids: ID[] } & IProjectionDto<ITransactionCategory>, object];
     getByOwnerIds: [{ ownerIds: ID[] } & IProjectionDto<ITransactionCategory>, object];
+    /*
+      This is used in the context of a saga to restore transaction categories
+      that were deleted as part of a larger operation
+      that failed and needs to be rolled back.
+    */
+    restoreCategories: [{ categories: ITransactionCategory[] }, void];
   }> {}
