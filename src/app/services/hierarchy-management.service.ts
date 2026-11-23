@@ -6,10 +6,10 @@ export abstract class IHierarchyService<T extends IPersistantEntity & { parent?:
 
   abstract getParent(id: ID, opts: Record<string, unknown>): Promise<T | null>;
   abstract getDirectChildren(
-    payload: { id: ID; ownerId?: ID },
+    payload: { id: ID; ownerIds?: ID[] },
     opts: Record<string, unknown>,
   ): Promise<ListResponse<T>>;
-  abstract geAllChildren(payload: { id: ID; ownerId?: ID }, opts: Record<string, unknown>): Promise<ListResponse<T>>;
+  abstract geAllChildren(payload: { id: ID; ownerIds?: ID[] }, opts: Record<string, unknown>): Promise<ListResponse<T>>;
   abstract getSiblings(payload: { id: ID; ownerId?: ID }, opts: Record<string, unknown>): Promise<ListResponse<T>>;
   abstract getDepth(id: ID, opts: Record<string, unknown>): Promise<number>;
 }
