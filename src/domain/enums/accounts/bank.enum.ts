@@ -3,5 +3,6 @@ export enum Bank {
   MONO = 'MONO',
   PRIVAT = 'PRIVAT',
   UKRSIB = 'UKRSIB',
+  BCR = 'BCR',
   OTHER = 'OTHER',
 }

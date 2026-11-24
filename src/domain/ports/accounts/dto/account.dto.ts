@@ -5,8 +5,12 @@ export interface IAccountDto {
 
   name: string;
   currencyId: ID;
+
+  // The initial balance applies at the start of this calendar day.
+
+  balanceStartOn: Date;
   initialBalance: number;
   bank: Bank;
 
-  iban?: string;
+  cardNumber?: string;
 }
